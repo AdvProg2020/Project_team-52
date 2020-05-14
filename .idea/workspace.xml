@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2fcde215-e894-4da2-8bd3-232ff087df23" name="Default Changelist" comment="" />
+    <list default="true" id="2fcde215-e894-4da2-8bd3-232ff087df23" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Model/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/OrderItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/ProductSeller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/ProductSeller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Promo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Promo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Rate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Rate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Season.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Seller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Seller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/ShipmentState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/ShipmentState.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -1,4 +1,5 @@
-package Model;
+package model;
 
-public class ShipmentState {
-}
+public enum ShipmentState {
+    WAITING_TO_SEND, SENT, RECEIVED
+}}
