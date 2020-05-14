@@ -1,4 +1,5 @@
 package Model;
 
-public class CommentState {
+public enum  CommentState {
+    WAITING_FOR_CONFIRMATION, CONFIRMED, NOT_CONFIRMED;
 }

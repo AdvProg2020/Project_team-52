@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2fcde215-e894-4da2-8bd3-232ff087df23" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/CategoryFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/CategoryFeature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/CommentState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/CommentState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/FeatureType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/FeatureType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Off.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Off.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/OffItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/OffItem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,16 +44,28 @@
       <updated>1589446881245</updated>
       <workItem from="1589446888050" duration="249000" />
     </task>
+    <task id="LOCAL-00001" summary="kamyar">
+      <created>1589451592240</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1589451592240</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="kamyar" />
+    <option name="LAST_COMMIT_MESSAGE" value="kamyar" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1589451150751">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1589451590114">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1589451150751" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1589451590114" />
     <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1589451159782">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
