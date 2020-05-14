@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2fcde215-e894-4da2-8bd3-232ff087df23" name="Default Changelist" comment="" />
+    <list default="true" id="2fcde215-e894-4da2-8bd3-232ff087df23" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,9 +37,31 @@
       <updated>1589446881245</updated>
       <workItem from="1589446888050" duration="249000" />
     </task>
+    <task id="LOCAL-00001" summary="parimehr">
+      <created>1589448854794</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1589448854794</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="parimehr" />
+    <option name="LAST_COMMIT_MESSAGE" value="parimehr" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="264" y="23" key="CommitChangelistDialog2" timestamp="1589448854286">
+      <screen x="0" y="23" width="1280" height="739" />
+    </state>
+    <state x="264" y="23" key="CommitChangelistDialog2/0.23.1280.739@0.23.1280.739" timestamp="1589448854286" />
+    <state x="240" y="132" key="Vcs.Push.Dialog.v2" timestamp="1589448919476">
+      <screen x="0" y="23" width="1280" height="739" />
+    </state>
+    <state x="240" y="132" key="Vcs.Push.Dialog.v2/0.23.1280.739@0.23.1280.739" timestamp="1589448919476" />
   </component>
 </project>
