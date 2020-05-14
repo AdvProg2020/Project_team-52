@@ -1,4 +1,5 @@
 package Model;
 
-public class Admin {
+public class Admin  {
+
 }
