@@ -2,17 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2fcde215-e894-4da2-8bd3-232ff087df23" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/Session.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Exeption/InvalidDateException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/OrderItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/ProductSeller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/ProductSeller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Promo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Promo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Rate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Rate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Season.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Seller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Seller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/ShipmentState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/ShipmentState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/AlreadyLoggedInException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exeption/AlreadyLoggedInException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/InvalidAuthenticationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exeption/InvalidAuthenticationException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/InvalidDate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/InvalidDiscountPercentException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exeption/InvalidDiscountPercentException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/InvalidFormatException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exeption/InvalidFormatException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/InvalidIDException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exeption/InvalidIDException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/InvalidPromoCodeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exeption/InvalidPromoCodeException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/InvalidTokenException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exeption/InvalidTokenException.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,12 +22,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1btMLa769jpV9vOYucjCccdydFj" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -61,25 +64,35 @@
       <option name="project" value="LOCAL" />
       <updated>1589449412848</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="parimehr">
+      <created>1589874543167</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1589874543167</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="parimehr" />
     <option name="LAST_COMMIT_MESSAGE" value="parimehr" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="264" y="23" key="CommitChangelistDialog2" timestamp="1589449412431">
-      <screen x="0" y="23" width="1280" height="738" />
+    <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1589874683333">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
+    <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.800@0.0.1280.800" timestamp="1589874683333" />
     <state x="264" y="23" key="CommitChangelistDialog2/0.23.1280.738@0.23.1280.738" timestamp="1589449412431" />
     <state x="264" y="23" key="CommitChangelistDialog2/0.23.1280.739@0.23.1280.739" timestamp="1589448854286" />
-    <state x="240" y="132" key="Vcs.Push.Dialog.v2" timestamp="1589449457171">
-      <screen x="0" y="23" width="1280" height="738" />
+    <state x="240" y="118" key="Vcs.Push.Dialog.v2" timestamp="1589874647011">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
+    <state x="240" y="118" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1589874647011" />
     <state x="240" y="132" key="Vcs.Push.Dialog.v2/0.23.1280.738@0.23.1280.738" timestamp="1589449457171" />
     <state x="240" y="132" key="Vcs.Push.Dialog.v2/0.23.1280.739@0.23.1280.739" timestamp="1589448919476" />
   </component>

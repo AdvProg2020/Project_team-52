@@ -1,4 +1,8 @@
-package Exeption;
+package Exception;
 
-public class AlreadyLoggedInException {
+public class AlreadyLoggedInException extends Exception {
+
+    public AlreadyLoggedInException(String message) {
+        super(message);
+    }
 }

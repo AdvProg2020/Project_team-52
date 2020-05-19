@@ -1,4 +1,13 @@
 package Exeption;
+public class InvalidAuthenticationException extends Exception {
+    private String field;
 
-public class InvalidAuthenticationException {
+    public InvalidAuthenticationException(String message , String field) {
+        super(message);
+        this.field = field;
+    }
+
+    public String getFieldName() {
+        return field;
+    }
 }
