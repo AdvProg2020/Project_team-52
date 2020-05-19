@@ -2,16 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2fcde215-e894-4da2-8bd3-232ff087df23" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Model/Session.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/NotBoughtTheProductException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exeption/NotBoughtTheProductException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/NotEnoughCreditException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exeption/NotEnoughCreditException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/NotEnoughProductException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exeption/NotEnoughProductException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/NotLoggedInException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exeption/NotLoggedInException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/NotSellerException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exeption/NotSellerException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/ObjectAlreadyExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exeption/ObjectAlreadyExistException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/PasswordIsWrongException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exeption/PasswordIsWrongException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/PromoNotAvailabeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exeption/PromoNotAvailabeException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/WrongFieldException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exeption/WrongFieldException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/OrderItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/ProductSeller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/ProductSeller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Promo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Promo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Rate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Rate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Season.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Seller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Seller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/ShipmentState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/ShipmentState.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,9 +32,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Project_team-52" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="SvnConfiguration">
@@ -48,31 +47,40 @@
       <updated>1589446881245</updated>
       <workItem from="1589446888050" duration="249000" />
     </task>
-    <task id="LOCAL-00001" summary="kamyar">
-      <created>1589451592240</created>
+    <task id="LOCAL-00001" summary="parimehr">
+      <created>1589448854794</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1589451592240</updated>
+      <updated>1589448854794</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="parimehr">
+      <created>1589449412848</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1589449412848</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="kamyar" />
-    <option name="LAST_COMMIT_MESSAGE" value="kamyar" />
+    <MESSAGE value="parimehr" />
+    <option name="LAST_COMMIT_MESSAGE" value="parimehr" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1589873931532">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="264" y="23" key="CommitChangelistDialog2" timestamp="1589449412431">
+      <screen x="0" y="23" width="1280" height="738" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1589873931532" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1589451159782">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="264" y="23" key="CommitChangelistDialog2/0.23.1280.738@0.23.1280.738" timestamp="1589449412431" />
+    <state x="264" y="23" key="CommitChangelistDialog2/0.23.1280.739@0.23.1280.739" timestamp="1589448854286" />
+    <state x="240" y="132" key="Vcs.Push.Dialog.v2" timestamp="1589449457171">
+      <screen x="0" y="23" width="1280" height="738" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1589451159782" />
+    <state x="240" y="132" key="Vcs.Push.Dialog.v2/0.23.1280.738@0.23.1280.738" timestamp="1589449457171" />
+    <state x="240" y="132" key="Vcs.Push.Dialog.v2/0.23.1280.739@0.23.1280.739" timestamp="1589448919476" />
   </component>
 </project>
