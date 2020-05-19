@@ -1,4 +1,8 @@
 package Exeption;
 
-public class PasswordIsWrongException {
+public class PasswordIsWrongException extends Exception {
+
+    public PasswordIsWrongException(String message) {
+        super(message);
+    }
 }

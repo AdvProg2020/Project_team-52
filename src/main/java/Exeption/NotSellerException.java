@@ -1,4 +1,8 @@
 package Exeption;
 
-public class NotSellerException {
+public class NotSellerException extends Exception {
+
+    public NotSellerException(String message) {
+        super(message);
+    }
 }

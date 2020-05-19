@@ -1,4 +1,8 @@
 package Exeption;
 
-public class NotEnoughCreditException {
+public class NotCustomerException extends Exception {
+
+    public NotCustomerException(String message) {
+        super(message);
+    }
 }

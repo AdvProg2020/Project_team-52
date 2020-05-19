@@ -1,4 +1,8 @@
 package Exeption;
 
-public class NoObjectIDException {
+public class NoObjectIdException extends Exception {
+
+    public  NoObjectIdException(String message) {
+        super(message);
+    }
 }

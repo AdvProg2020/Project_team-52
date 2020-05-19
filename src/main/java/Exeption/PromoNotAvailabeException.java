@@ -1,4 +1,8 @@
 package Exeption;
 
-public class PromoNotAvailabeException {
+public class PromoNotAvailableException extends Exception {
+
+    public PromoNotAvailableException(String message) {
+        super(message);
+    }
 }
