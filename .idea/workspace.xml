@@ -3,6 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="2fcde215-e894-4da2-8bd3-232ff087df23" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/acount/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/acount/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/acount/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/acount/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/acount/ShowUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/acount/ShowUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/acount/UserInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/acount/UserInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/OrderItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/ProductSeller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/ProductSeller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Promo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Promo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Rate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Rate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Seller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Seller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/ShipmentState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/ShipmentState.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +56,7 @@
       <option name="presentableId" value="Default" />
       <updated>1589446881245</updated>
       <workItem from="1589446888050" duration="249000" />
-      <workItem from="1590005623798" duration="15494000" />
+      <workItem from="1590005623798" duration="18324000" />
     </task>
     <task id="LOCAL-00001" summary="kamyar">
       <created>1589451592240</created>
@@ -72,7 +86,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592851349564</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="kamyar">
+      <created>1592928285859</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1592928285860</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -83,18 +104,18 @@
     <option name="LAST_COMMIT_MESSAGE" value="kamyar" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1592851370451">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1592928273203">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1592851370451" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1592928273203" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1590661341512">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1590661341512" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1592851384587">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1592928303794">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1592851384587" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1592928303794" />
     <state x="492" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592928141552">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
