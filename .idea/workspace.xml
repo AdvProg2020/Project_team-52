@@ -3,18 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2fcde215-e894-4da2-8bd3-232ff087df23" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/AccountController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/AuctionController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/BuyerController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/FilterController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GuestController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/LoginController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/ManagerController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/ProductController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/ProductsController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/SellerController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/SignUpController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Admin.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +42,7 @@
       <option name="presentableId" value="Default" />
       <updated>1589446881245</updated>
       <workItem from="1589446888050" duration="249000" />
-      <workItem from="1590005623798" duration="21521000" />
+      <workItem from="1590005623798" duration="23295000" />
     </task>
     <task id="LOCAL-00001" summary="kamyar">
       <created>1589451592240</created>
@@ -98,7 +86,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592989781535</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="kamyar">
+      <created>1593074326269</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1593074326269</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,18 +104,18 @@
     <option name="LAST_COMMIT_MESSAGE" value="kamyar" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1592989777804">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1593074321535">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1592989777804" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1593074321535" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1590661341512">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1590661341512" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1592989788556">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1593074330360">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1592989788556" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1593074330360" />
     <state x="492" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592928141552">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
