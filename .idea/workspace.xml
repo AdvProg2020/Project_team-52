@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2fcde215-e894-4da2-8bd3-232ff087df23" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Exeption/InvalidDateException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/AlreadyLoggedInException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exeption/AlreadyLoggedInException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/InvalidAuthenticationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exeption/InvalidAuthenticationException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/InvalidDate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/InvalidDiscountPercentException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exeption/InvalidDiscountPercentException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/InvalidFormatException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exeption/InvalidFormatException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/InvalidIDException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exeption/InvalidIDException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/InvalidPromoCodeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exeption/InvalidPromoCodeException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/InvalidTokenException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exeption/InvalidTokenException.java" afterDir="false" />
-    </list>
+    <list default="true" id="2fcde215-e894-4da2-8bd3-232ff087df23" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +9,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1btMLa769jpV9vOYucjCccdydFj" />
   <component name="ProjectLevelVcsManager">
@@ -95,5 +85,9 @@
     <state x="240" y="118" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1589874647011" />
     <state x="240" y="132" key="Vcs.Push.Dialog.v2/0.23.1280.738@0.23.1280.738" timestamp="1589449457171" />
     <state x="240" y="132" key="Vcs.Push.Dialog.v2/0.23.1280.739@0.23.1280.739" timestamp="1589448919476" />
+    <state x="423" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593215683073">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="423" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.800@0.0.1280.800" timestamp="1593215683073" />
   </component>
 </project>
