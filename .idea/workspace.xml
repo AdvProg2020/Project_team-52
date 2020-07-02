@@ -3,29 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2fcde215-e894-4da2-8bd3-232ff087df23" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/SignUpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/AccountDoesNotExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exception/AccountDoesNotExistException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/AddresInvalidException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exception/AddresInvalidException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/CannotRateException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exception/CannotRateException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/CartDoesNotExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exception/CartDoesNotExistException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/CategoryDoesNotExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exception/CategoryDoesNotExistException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/CommentDoesNotExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exception/CommentDoesNotExistException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/DateTimeParseException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exception/DateTimeParseException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/DiscountCodeExpiredException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exception/DiscountCodeExpiredException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/FieldDoesNotExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exception/FieldDoesNotExistException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/InvalidDiscountCodeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exception/InvalidDiscountCodeException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/LogHistoryDoesNotExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exception/LogHistoryDoesNotExistException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/NoAccessException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exception/NoAccessException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/NoAccountException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exception/NoAccountException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/NotEnoughCreditException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exception/NotEnoughCreditException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/NotEnoughProductsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exception/NotEnoughProductsException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/OffDoesNotExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exception/OffDoesNotExistException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/ProductIsOutOfStockException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exception/ProductIsOutOfStockException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/RequestDoesNotExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exception/RequestDoesNotExistException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/ScoreDoesNotExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exception/ScoreDoesNotExistException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/SellerDoesNotSellOfThisProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exception/SellerDoesNotSellOfThisProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/ThereIsntPtoductException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exception/ThereIsntPtoductException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exeption/ZipCodeInvalidException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exception/ZipCodeInvalidException.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +70,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593215909819</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="parimehr and kamyar">
+      <created>1593697895735</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1593697895735</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,19 +86,22 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="parimehr" />
-    <option name="LAST_COMMIT_MESSAGE" value="parimehr" />
+    <MESSAGE value="parimehr and kamyar" />
+    <option name="LAST_COMMIT_MESSAGE" value="parimehr and kamyar" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1593215909512">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state x="264" y="23" key="CommitChangelistDialog2" timestamp="1593697895273">
+      <screen x="0" y="23" width="1280" height="732" />
     </state>
     <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.800@0.0.1280.800" timestamp="1593215909512" />
+    <state x="264" y="23" key="CommitChangelistDialog2/0.23.1280.732@0.23.1280.732" timestamp="1593697895273" />
     <state x="264" y="23" key="CommitChangelistDialog2/0.23.1280.738@0.23.1280.738" timestamp="1589449412431" />
     <state x="264" y="23" key="CommitChangelistDialog2/0.23.1280.739@0.23.1280.739" timestamp="1589448854286" />
-    <state x="240" y="118" key="Vcs.Push.Dialog.v2" timestamp="1593215921844">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state x="240" y="131" key="Vcs.Push.Dialog.v2" timestamp="1593697931633">
+      <screen x="0" y="23" width="1280" height="732" />
     </state>
     <state x="240" y="118" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1593215921844" />
+    <state x="240" y="131" key="Vcs.Push.Dialog.v2/0.23.1280.732@0.23.1280.732" timestamp="1593697931633" />
     <state x="240" y="132" key="Vcs.Push.Dialog.v2/0.23.1280.738@0.23.1280.738" timestamp="1589449457171" />
     <state x="240" y="132" key="Vcs.Push.Dialog.v2/0.23.1280.739@0.23.1280.739" timestamp="1589448919476" />
     <state x="423" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593215683073">
