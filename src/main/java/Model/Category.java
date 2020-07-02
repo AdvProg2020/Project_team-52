@@ -1,5 +1,7 @@
 package Model;
 
+import Exception.*;
+
 import Model.DataBase.DataBase;
 import Model.Field.SingleString;
 import Model.Interface.AddingNew;

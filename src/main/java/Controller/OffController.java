@@ -5,7 +5,7 @@ import Model.Product;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import Exception.*;
 
 public class OffController {
     private ControllerSection controllerSection = ControllerSection.getInstance();
@@ -29,7 +29,7 @@ public class OffController {
         return product;
     }
 
-    public List<Product> getProductOfAuction(long auctionId) throws AuctionDoesNotExistException, ProductDoesNotExistException {
+    public List<Product> getProductOfAuction(long auctionId) throws OffDoesNotExistException, ProductDoesNotExistException {
         Off auction = Off.getAuctionById(auctionId);
         List<Product> list = new ArrayList<>();
         for (Long aLong : auction.getProductList()) {

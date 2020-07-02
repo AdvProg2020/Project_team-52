@@ -6,7 +6,9 @@ import Model.Account.Customer;
 import Model.Account.Guest;
 import Model.Account.Seller;
 import Model.Field.Field;
+import Exception.*;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -25,7 +27,7 @@ public class ProductController {
 
     public List<Seller> ListOfSellersOfChosenProduct() throws AccountDoesNotExistException {
         List<Seller> list = new ArrayList<>();
-        for (ProductSeller productOfSeller : controllerSection.getProduct().getSellersOfProduct()) {
+        for (ProductSeller productOfSeller : controllerSection.getProduct().getSellerList()) {
             long sellerId = productOfSeller.getSellerId();
             Account accountById = Account.getAccountById(sellerId);
             list.add((Seller) accountById);

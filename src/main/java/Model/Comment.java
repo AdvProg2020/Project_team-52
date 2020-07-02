@@ -1,5 +1,7 @@
 package Model;
 
+import Exception.*;
+
 import Model.Data.Data;
 import Model.DataBase.DataBase;
 import Model.Interface.AddingNew;

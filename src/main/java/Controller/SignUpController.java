@@ -11,11 +11,11 @@ import Model.Field.Field;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
-
+import Exception.*;
 public class SignUpController {
     private static SignUpController registerController = new SignUpController();
 
-    /**************************************************MainMethods******************************************************/
+
 
     public void finishRegistering(Account account) {
         Account.removeFromInRegistering(account);
@@ -51,8 +51,7 @@ public class SignUpController {
             case "Customer":
                 account = new Customer(username);
                 break;
-            default:
-                throw new TypeInvalidException(type + " isn't a valid type. just 'Manager' , 'Seller' , 'Customer' are valid.");
+
         }
 
         Account.addToInRegisteringList(account);
@@ -62,7 +61,7 @@ public class SignUpController {
 
     public void creatPasswordForAccount(Account account, String password) throws PasswordInvalidException {
 
-        RegisterAndLogin.RegisterValidation registerValidation = RegisterAndLoginValidator.isPassword(password).get();
+        RegisterAndLogin.RegisterValidation registerValidation = RegisterAndLogin.isPassword(password).get();
 
         if (registerValidation == RegisterAndLogin.RegisterValidation.IS_NOT_A_VALID_PASS) {
             throw new PasswordInvalidException("Your entered password: " + password + " is Invalid. Just enter (a-z),(A_Z),(_).");
@@ -81,10 +80,6 @@ public class SignUpController {
         switch (registerValidation) {
             case IS_NOT_A_VALID_NUMB:
                 throw new PhoneNumberInvalidException("Phone number is invalid.");
-            case IS_NOT_A_VALID_FIRST_NAME:
-                throw new FirstNameInvalidException("First name is invalid.");
-            case IS_NOT_A_VALID_LAST_NAME:
-                throw new LastNameInvalidException("Last name is invalid.");
             case IS_NOT_A_VALID_EMAIL:
                 throw new EmailInvalidException("Email is invalid.");
         }
@@ -112,7 +107,7 @@ public class SignUpController {
         }
     }
 
-    public void saveCompanyInfo(Account account, String brand, String phoneNumber, String email) throws CompanyNameInvalidException, PhoneNumberInvalidException, EmailInvalidException {
+    public void saveCompanyInfo(Account account, String brand, String phoneNumber, String email) throws  PhoneNumberInvalidException, EmailInvalidException {
 
         RegisterAndLogin.RegisterValidation registerValidation = RegisterAndLogin.isBrand(brand)
                 .and(RegisterAndLogin.isEmail(email))
@@ -121,8 +116,6 @@ public class SignUpController {
         switch (registerValidation) {
             case IS_NOT_A_VALID_NUMB:
                 throw new PhoneNumberInvalidException("Phone number is invalid.");
-            case IS_NOT_A_VALID_BRAND:
-                throw new CompanyNameInvalidException("this Company name is invalid.");
             case IS_NOT_A_VALID_EMAIL:
                 throw new EmailInvalidException("Email is invalid.");
         }

@@ -97,4 +97,8 @@ public class Seller extends Account{
         this.companyInfo = companyInfo;
         DataBase.save(this);
     }
+
+    public List<Long> getOffList() {
+        return getOffList();
+    }
 }

@@ -1,6 +1,5 @@
 package Model.Account;
-import Exception.NoAccessException;
-import Exception.NotEnoughCreditException;
+import Exception.*;
 
 import Model.Data.Data;
 import Model.DataBase.DataBase;
@@ -8,8 +7,10 @@ import Model.Field.Field;
 import Model.Info;
 import Model.Interface.AddingNew;
 import Model.Interface.Packable;
+import Model.Request;
 import Model.Role;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,10 +32,12 @@ public class Account implements Packable<Account> {
 
     protected Info personalInfo;
 
+    protected static List<Account> inRegistering = new ArrayList<>();
+
 
     private Map<String, String> details;
 
-    public Account() {
+    private Account() {
         details = new HashMap<>();
     }
 
@@ -51,6 +54,14 @@ public class Account implements Packable<Account> {
         account.setId(AddingNew.getRegisteringId().apply(getList()));
         List.add(account);
         DataBase.save(account, true);
+    }
+
+    public static void removeFromInRegistering(Account account) {
+        inRegistering.remove(account);
+    }
+
+    public static void addToInRegisteringList(Manager manager) {
+        inRegistering.add(Account);
     }
 
     public String getFullName() {
@@ -212,5 +223,13 @@ public class Account implements Packable<Account> {
 
     public void setPersonalInfo(Info info) {
         this.setPersonalInfo(info) =setPersonalInfo(info);
+    }
+
+    public void acceptRequest(Request request) throws AccountDoesNotExistException {
+        request.acceptRequest();
+    }
+
+    public void declineRequest(Request requestById) {
+        requestById.declineRequest();
     }
 }

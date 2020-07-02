@@ -6,6 +6,7 @@ import Model.Account.Customer;
 import Model.Account.Seller;
 import Model.Field.Field;
 import Model.Interface.ForPend;
+import Exception.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -134,12 +135,12 @@ public class SellerController extends AccountController {
         this.sendRequest(product, information, "remove");
     }
 
-    public Off viewOff(String offIdString) throws AuctionDoesNotExistException, NumberFormatException {
+    public Off viewOff(String offIdString) throws OffDoesNotExistException, NumberFormatException {
         long offId = Long.parseLong(offIdString);
         return Off.getAuctionById(offId);
     }
 
-    public void editAuction(String strId, String fieldName, String newInfo, String information) throws AuctionDoesNotExistException, FieldDoesNotExistException, NumberFormatException, InvalidInputByUserException {
+    public void editAuction(String strId, String fieldName, String newInfo, String information) throws OffDoesNotExistException, FieldDoesNotExistException, NumberFormatException, InvalidInputByUserException {
         long id = Long.parseLong(strId);
         Off.checkExistOfAuctionById(id, ((Seller) controllerUnit.getAccount()).getOffList(), controllerUnit.getAccount());
         try {
@@ -154,7 +155,7 @@ public class SellerController extends AccountController {
         }
     }
 
-    public void editProduct(String strId, String fieldName, String newInfo, String information) throws AuctionDoesNotExistException, FieldDoesNotExistException, CategoryDoesNotExistException, ProductDoesNotExistException, NumberFormatException {
+    public void editProduct(String strId, String fieldName, String newInfo, String information) throws OffDoesNotExistException, FieldDoesNotExistException, CategoryDoesNotExistException, ProductDoesNotExistException, NumberFormatException {
         long id = Long.parseLong(strId);
         Product.checkExistOfProductById(id, ((Seller) controllerUnit.getAccount()).getProductList(), controllerUnit.getAccount());
         try {
@@ -164,5 +165,16 @@ public class SellerController extends AccountController {
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }
+    }
+
+    public void addProductsToOff(Off auction,List<String> productIdsString) throws ProductDoesNotExistException, ProductCantBeInMoreThanOneAuction, NumberFormatException {
+        List<Long> productIds = productIdsString.stream().map(Long::parseLong).collect(Collectors.toList());
+        for (long aLong : productIdsString.stream().map(Long::parseLong).collect(Collectors.toList())) {
+            Product product = Product.getProductById(aLong);
+            if (product.getOff() != null) {
+                throw new ProductCantBeInMoreThanOneAuction("Product with the id:" + aLong + " have auction. You can't add it");
+            }
+        }
+        auction.setProductList(productIds);
     }
 }

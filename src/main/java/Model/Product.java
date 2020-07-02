@@ -7,6 +7,7 @@ import Model.Field.Field;
 import Model.Interface.AddingNew;
 import Model.Interface.Filterable;
 import Model.Interface.Packable;
+import Exception.*;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -59,6 +60,10 @@ public class Product  implements Packable<Product> , Filterable, Cloneable {
             sellerList = new ArrayList<>();
             commentList = new ArrayList<>();
         }
+
+    public static Object getList() {
+        return getList();
+    }
 
 
     public int getProductId() {
@@ -178,9 +183,16 @@ public class Product  implements Packable<Product> , Filterable, Cloneable {
 
             }
         }
+    public static Product getProductById(long id) throws ProductDoesNotExistException {
+        return list.stream()
+                .filter(product -> id == product.getId())
+                .findFirst()
+                .orElseThrow(() -> new ProductDoesNotExistException(
+                        "Product with the id:" + id + " does not exist in list of all products."
+                ));
+    }
 
         public Request createRequest(RequestCondition requestCondition) {
-        //todo
         Request Request = new Request(acountId,Information, , requestCondition);
             if (requestCondition == RequestCondition.ADD) {
                 for (ProductSeller seller : sellerList) {

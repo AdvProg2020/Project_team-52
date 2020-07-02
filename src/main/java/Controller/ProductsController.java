@@ -3,7 +3,7 @@ package Controller;
 import Model.Category;
 import Model.Product;
 import Model.Sorter;
-
+import Exception.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -64,31 +64,14 @@ public class ProductsController {  public enum SortElement {
         return productList;
     }
 
-    public List<Product> sort( String sortElement) throws NotAvailableSortException {
-
-        switch (sortElement) {
-            case "Time":
-                this.sortElement = SortElement.TIME;
-                break;
-            case "Point":
-                this.sortElement = SortElement.POINT;
-                break;
-            case "NumberOfVisits":
-                this.sortElement = SortElement.NUMBER_OF_VISITS;
-                break;
-            case "Default":
-                this.sortElement = SortElement.DEFAULT;
-                break;
-            default:
-                throw new NotAvailableSortException("this sort isn't an available Sort.");
-        }
-        this.sortElement.getSorter().sorted(productList);
-        return productList;
-    }
 
     public List<Product> disableSort() {
         sortElement = SortElement.NUMBER_OF_VISITS;
         return productList;
+    }
+
+    public static ProductsController getInstance() {
+        return productsController;
     }
 
     public Product showProduct(String productIdString) throws ProductDoesNotExistException , NumberFormatException {

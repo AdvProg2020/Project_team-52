@@ -6,7 +6,9 @@ import Model.Account.Customer;
 import Model.Account.Seller;
 import Model.DataBase.DataBase;
 import Model.Field.Field;
+import Exception.*;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -61,7 +63,7 @@ public class CustomerController extends AccountController {
             Seller seller = (Seller) Account.getAccountById(listOfSellers.get(i));
             Product product = listOfProduct.get(i);
 
-            double productPrice = product.getProductOfSellerById(listOfSellers.get(i)).getPrice();
+            double productPrice = product.getProductSellerById(listOfSellers.get(i)).getPrice();
             double productAuctionAmount = product.getOff() == null ? 0 : product.getOff().getAuctionDiscount(productPrice);
             double productFinalPrice = productPrice - productAuctionAmount;
 
@@ -81,7 +83,7 @@ public class CustomerController extends AccountController {
 
     public void checkIfProductBoughtToRate(long productId) throws CannotRateException, ProductDoesNotExistException, NumberFormatException {
         Product product = Product.getProductById(productId);
-        if (!product.getBuyerList().contains(controllerUnit.getAccount().getId())) {
+        if (!product.getCustomer().contains(controllerUnit.getAccount().getId())) {
             throw new CannotRateException("Cannot Rate. You must buy it first. ok?");
         }
     }
@@ -155,7 +157,7 @@ public class CustomerController extends AccountController {
         ((Customer) controllerUnit.getAccount()).removeFromCart(productId, sellerId);
     }
 
-    public void receiveInformation( String postCode, String address) throws PostCodeInvalidException, AddresInvalidException, FieldDoesNotExistException {
+    public void receiveInformation( String postCode, String address) throws PostCodeInvalidException AddresInvalidException, FieldDoesNotExistException {
         if (!postCode.matches("\\d{10}")) {
             throw new PostCodeInvalidException("PostCode is Invalid.");
         }
@@ -166,14 +168,7 @@ public class CustomerController extends AccountController {
         this.saveFieldToFieldList("address", address);
     }
 
-    public void discountCodeUse(String code) throws InvalidDiscountCodeException, DiscountCodeExpiredException, AccountDoesNotExistException {
-        PromotionCode discountCode = PromotionCode.getDiscountCodeByCode(code);
-        if (!((Customer) controllerUnit.getAccount()).getDiscountCodeList().contains(discountCode.getId())) {
-            throw new InvalidDiscountCodeException("Invalid discountCode whit id:" + discountCode.getId() + " .");
-        }
-        discountCode.checkExpiredDiscountCode(true);
-        this.setDiscountCodeEntered(discountCode);
-    }
+
 
     public void buyProductsOfCart() throws NotEnoughCreditException, AccountDoesNotExistException, ProductDoesNotExistException, SellerDoesNotSellOfThisProduct {
         this.checkEnoughCredit();
