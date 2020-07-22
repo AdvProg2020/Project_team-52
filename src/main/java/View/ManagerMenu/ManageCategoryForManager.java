@@ -3,22 +3,22 @@ package View.ManagerMenu;
 import Controller.ManagerController;
 import View.Menu;
 import View.SellerMenu.ManageProductForSeller;
-
+import Exception.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 public class ManageCategoryForManager extends Menu {
-    private static ManageProductForSeller menu;
+    private static ManageCategoryForManager menu;
     private static ManagerController managerController = ManagerController.getInstance();
 
-    public ManageProductForSeller(String name) {
+    public ManageCategoryForManager(String name) {
         super(name);
     }
 
-    public static ManageProductForSeller getInstance(String name) {
+    public static ManageCategoryForManager getInstance(String name) {
         if (menu == null) {
-            menu = new ManageProductForSeller(name);
+            menu = new ManageCategoryForManager(name);
         }
         return menu;
     }

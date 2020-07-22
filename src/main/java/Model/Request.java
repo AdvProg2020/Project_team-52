@@ -7,11 +7,13 @@ import Model.DataBase.DataBase;
 import Model.Interface.AddingNew;
 import Model.Interface.ForPend;
 import Model.Interface.Packable;
+import Exception.*;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
-public class Request implements Packable<Request>, Packable<Request> {
+public class Request implements Packable<Request>{
 
 
 
@@ -23,7 +25,11 @@ public class Request implements Packable<Request>, Packable<Request> {
     private String typeOfRequest;
     private ForPend forPend;
     private RequestCondition requestCondition;
+    private Off Off;
 
+    private Request() {
+
+    }
 
 
     public long getId() {
@@ -67,7 +73,7 @@ public class Request implements Packable<Request>, Packable<Request> {
 
         switch (typeOfRequest) {
             case "new":
-                accept_new();
+                accept_new(true);
                 break;
             case "remove":
                 accept_remove();
@@ -84,30 +90,42 @@ public class Request implements Packable<Request>, Packable<Request> {
         forPend.setStateForPend("Accepted");
     }
 
-    private void accept_new() throws AccountDoesNotExistException {
+    private void accept_new(boolean New) throws AccountDoesNotExistException {
 
         Seller seller = (Seller) Account.getAccountById(accountId);
 
         if (forPend instanceof Product) {
-            Off off = ((Product) forPend).getAuction();
+            Off auction = ((Product) forPend).getOff();
             Category category = ((Product) forPend).getCategory();
-            if (off != null) {
-                off.addProductToAuction(((Product) forPend).getId());
+            if (auction != null) {
+                auction.addProductToOff(((Product) forPend).getId());
             }
             if (category != null) {
                 category.addToProductList(((Product) forPend).getId());
             }
-            Product.addProduct((Product) forPend);
+            Product.addProduct((Product) forPend, New);
             seller.addToProductList(((Product) forPend).getId());
         } else if (forPend instanceof Off) {
-            Off.addAuction((Off) forPend);
+            Off.addAuction((Off) forPend , New);
             seller.addToAuctionList(((Off) forPend).getId());
+            ((Off) forPend).getProductList().stream().map(aLong -> {
+                try {
+                    return Product.getProductById(aLong);
+                } catch (ProductDoesNotExistException e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }).filter(Objects::nonNull).filter(product -> product.getOff() == null)
+                    .forEach(product -> {
+                        product.setOff(((Off) forPend));
+                        DataBase.save((Off) forPend);
+                    });
         }
     }
 
     private void accept_edit() throws AccountDoesNotExistException {
         accept_remove();
-        accept_new();
+        accept_new(true);
     }
 
     private void accept_remove() throws AccountDoesNotExistException {
@@ -116,10 +134,10 @@ public class Request implements Packable<Request>, Packable<Request> {
 
         if (forPend instanceof Product) {
             Product.removeProduct((Product) forPend);
-            Off off = ((Product) forPend).getAuction();
+            Off off = ((Product) forPend).getOff();
             Category category = ((Product) forPend).getCategory();
             if (off != null) {
-                off.removeProductFromAuction(((Product) forPend).getId());
+                off.removeProductFromOff(((Product) forPend).getId());
             }
             if (category != null) {
                 category.removeFromProductList(((Product) forPend).getId());
@@ -127,7 +145,7 @@ public class Request implements Packable<Request>, Packable<Request> {
             Product.removeProduct((Product) forPend);
             seller.removeFromProductList(((Product) forPend).getId());
         } else if (forPend instanceof Off) {
-            Off.removeAuction((Off) forPend);
+            Off.removeOff((Off) forPend);
             seller.removeFromAuctionList(((Off) forPend).getId());
         }
     }
@@ -157,7 +175,12 @@ public class Request implements Packable<Request>, Packable<Request> {
         DataBase.remove(request);
     }
 
-
+    public Request(long accountId, String information, String typeOfRequest, ForPend forPend) {
+        this.accountId = accountId;
+        this.information = information;
+        this.typeOfRequest = typeOfRequest;
+        this.forPend = forPend;
+    }
 
     @Override
     public Data<Request> pack() {
@@ -171,7 +194,7 @@ public class Request implements Packable<Request>, Packable<Request> {
     }
 
     @Override
-    public Request dpkg( Data<Request> data) {
+    public Request dpkg(Data<Request> data) {
         this.requestId = (long) data.getFields().get(0);
         this.accountId = (long) data.getFields().get(1);
         this.information = (String) data.getFields().get(2);
@@ -179,7 +202,6 @@ public class Request implements Packable<Request>, Packable<Request> {
         this.forPend = (ForPend) data.getFields().get(4);
         return this;
     }
-
 
     public static Request getRequestById(long id) throws RequestDoesNotExistException {
         return list.stream()

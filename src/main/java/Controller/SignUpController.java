@@ -7,21 +7,21 @@ import Model.Account.Customer;
 import Model.Account.Manager;
 import Model.Account.Seller;
 import Model.Field.Field;
+import Exception.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
-import Exception.*;
+
 public class SignUpController {
     private static SignUpController registerController = new SignUpController();
-
 
 
     public void finishRegistering(Account account) {
         Account.removeFromInRegistering(account);
     }
 
-    public Account creatTheBaseOfAccount(String type, String username) throws UserNameInvalidException, UserNameTooShortException, TypeInvalidException, CanNotCreatMoreThanOneMangerBySignUp, ThisUserNameAlreadyExistsException {
+    public Account creatTheBaseOfAccount(String type, String username) throws UserNameInvalidException, UserNameTooShortException, CanNotCreatMoreThanOneMangerBySignUp, ThisUserNameAlreadyExistsException, TypeInvalidException {
 
         RegisterAndLogin.RegisterValidation registerValidation = RegisterAndLogin.isUsername(username).get();
 
@@ -52,6 +52,8 @@ public class SignUpController {
                 account = new Customer(username);
                 break;
 
+            default:
+                throw new TypeInvalidException(type + " isn't a valid type. just 'Manager' , 'Seller' , 'Customer' are valid.");
         }
 
         Account.addToInRegisteringList(account);
@@ -70,7 +72,7 @@ public class SignUpController {
         account.setPassword(password);
     }
 
-    public void savePersonalInfo(Account account, String firstName, String lastName, String phoneNumber, String email) throws FirstNameInvalidException, LastNameInvalidException, EmailInvalidException, PhoneNumberInvalidException {
+    public void savePersonalInfo(Account account, String firstName, String lastName, String phoneNumber, String email) throws  EmailInvalidException, PhoneNumberInvalidException {
 
         RegisterAndLogin.RegisterValidation registerValidation = RegisterAndLogin.isFirstName(firstName)
                 .and(RegisterAndLogin.isLastName(lastName))
@@ -107,7 +109,7 @@ public class SignUpController {
         }
     }
 
-    public void saveCompanyInfo(Account account, String brand, String phoneNumber, String email) throws  PhoneNumberInvalidException, EmailInvalidException {
+    public void saveCompanyInfo(Account account, String brand, String phoneNumber, String email) throws PhoneNumberInvalidException, EmailInvalidException {
 
         RegisterAndLogin.RegisterValidation registerValidation = RegisterAndLogin.isBrand(brand)
                 .and(RegisterAndLogin.isEmail(email))

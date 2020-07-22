@@ -9,11 +9,13 @@ import java.util.Collections;
 import java.util.List;
 import java.util.logging.Filter;
 
-public class ProductsController {  public enum SortElement {
+public class ProductsController {
+
+
+    public enum SortElement {
 
     TIME(new Sorter(Sorter.getTimeComparator()),"Sort by upload time"),
     POINT(new Sorter(Sorter.getPointComparator()),"Sort by point"),
-    NUMBER_OF_VISITS(new Sorter(Sorter.getVisitorComparator()),"Sort by number of visitors"),
     DEFAULT(new Sorter(Sorter.getDefaultComparator()),"default sort");
 
     Sorter sorter;
@@ -56,9 +58,6 @@ public class ProductsController {  public enum SortElement {
     public List<Product> showProducts() {
 
         List<Product> productList = new ArrayList<>(Product.getList());
-
-
-
         currentSort().getSorter().sorted(productList);
 
         return productList;
@@ -66,7 +65,6 @@ public class ProductsController {  public enum SortElement {
 
 
     public List<Product> disableSort() {
-        sortElement = SortElement.NUMBER_OF_VISITS;
         return productList;
     }
 

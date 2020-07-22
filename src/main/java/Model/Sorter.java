@@ -28,10 +28,6 @@ public class Sorter {
         return defaultComparator;
     }
 
-    public static Comparator<Product> getVisitorComparator() {
-        return visitorComparator;
-    }
-
     public static Comparator<Product> getPointComparator() {
         return pointComparator;
     }

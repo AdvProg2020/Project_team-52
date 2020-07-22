@@ -27,11 +27,11 @@ public class Output {
     private CommentMenu commentMenu = CommentMenu.getInstance("commentProductMenu");
     private ProductActivityMenu productActivityMenu = ProductActivityMenu.getInstance("digestProductMenu");
     private LogInMenu logInMenu = LogInMenu.getInstance("logInMenu");
-    private ManageCategoryForManager manageCategoryForManager = ManageCategoryForManager.getInstance("manageCategoriesByManagerMenu");
+    private ManageCategoryForManager manageCategoryForManager=ManageCategoryForManager.getInstance("manageCategoryForManager");
     private ManageInfoMenu manageInfoMenu = ManageInfoMenu.getInstance("manageInfoMenu");
-    private ManageProductForManager manageProductForManager = ManageCategoryForManager.getInstance("manageProductsByManagerMenu");
-    private ManageProductForSeller manageProductForSeller = ManageProductForManager.getInstance("manageProductsBySellerMenu");
-    private ManageRequestForManager manageRequestForManager = ManageRequestForManager.getInstance().getInstance("manageRequestsByManagerMenu");
+    private ManageProductForManager manageProductForManager = ManageProductForManager.getInstance("manageProductForManagerMenu");
+    private ManageProductForSeller manageProductForSeller = ManageProductForSeller.getInstance("manageProductForSellerMenu");
+    private ManageRequestForManager manageRequestForManager = ManageRequestForManager.getInstance("manageRequestsByManagerMenu");
     private ManagerMenu managerMenu = ManagerMenu.getInstance("ManagerMenu");
     private ProductMenu productMenu = ProductMenu.getInstance("productMenu");
     private ProductsMenu productsMenu = ProductsMenu.getInstance("productsMenu");
@@ -39,6 +39,7 @@ public class Output {
     private ViewCartForCustomer viewCartForCustomer = ViewCartForCustomer.getInstance("viewCartByBuyerMenu");
     private ViewOffSeller viewOffsBySellerMenu = ViewOffSeller.getInstance("viewOffsBySellerMenu");
     private ViewOrderForCustomer viewOrderForCustomer = ViewOrderForCustomer.getInstance("viewOrdersByBuyerMenu");
+
 
     public static Output getInstance() {
         return outPut;
@@ -95,7 +96,6 @@ public class Output {
         setManageProductsByManagerMenuMethod();
         setViewOffsBySellerMenuMethods();
         setDiscountsMenuMethod();
-        setViewOrderForCustomerMenuMethod();
         setProductsMenuMethod();
         setProductMenuMethod();
         setManageProductsBySellerMenuMethod();
@@ -115,6 +115,7 @@ public class Output {
                 .addRegex("back")
                 .setPatterns();
     }
+
 
     private void setUserAreaMenuMethods() {
         userMenu.addMethod("openLoginMenu")
@@ -530,7 +531,7 @@ public class Output {
         customerMenu.setParentMenu(logInMenu);
         manageInfoMenu.setParentMenu(mainMenu);
         viewCartForCustomer.setParentMenu(customerMenu);
-        viewOrderForCustomerMenu.setParentMenu(customerMenu);
+        viewOrderForCustomer.setParentMenu(customerMenu);
         sellerMenu.setParentMenu(logInMenu);
         manageProductForSeller.setParentMenu(sellerMenu);
         viewOffsBySellerMenu.setParentMenu(sellerMenu);

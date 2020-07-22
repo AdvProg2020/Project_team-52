@@ -1,17 +1,17 @@
 package Model;
 
+import Model.Data.Data;
 import Model.DataBase.DataBase;
 import Model.Interface.AddingNew;
 import Model.Interface.ForPend;
 import Model.Interface.Packable;
-
+import Exception.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Collections;
 import java.util.List;
 
-public class
-Off implements Packable<Off>, ForPend,Cloneable {
+public class Off implements Packable<Off>, ForPend,Cloneable {
     private static List<Off> list;
 
     private static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -27,6 +27,9 @@ Off implements Packable<Off>, ForPend,Cloneable {
     public static List<Off> getList() {
         return Collections.unmodifiableList(list);
     }
+
+
+
 
     public List<Long> getProductList() {
         return Collections.unmodifiableList(productList);
@@ -92,13 +95,10 @@ Off implements Packable<Off>, ForPend,Cloneable {
 
 
 
-
-
-
-    public static void addOff( Off Off) {
-        off.setAuctionId(AddingNew.getRegisteringId().apply(getList()));
-        list.add(off);
-        DataBase.save(Off, true);
+    public static void addAuction(Off auction, boolean New) {
+        if (New) auction.setAuctionId(AddingNew.getRegisteringId().apply(getList()));
+        list.add(auction);
+        DataBase.save(auction, true);
     }
 
     public static void removeOff(Off auction) {
@@ -111,6 +111,7 @@ Off implements Packable<Off>, ForPend,Cloneable {
         DataBase.save(this);
     }
 
+
     public void removeProductFromOff(long productId) {
         productList.remove(productId);
         DataBase.save(this);
@@ -118,18 +119,18 @@ Off implements Packable<Off>, ForPend,Cloneable {
 
 
 
-    public static Off getAuctionById(long id) throws AuctionDoesNotExistException {
+    public static Off getAuctionById(long id) throws OffDoesNotExistException {
         return list.stream()
                 .filter(product -> id == product.getId())
                 .findFirst()
-                .orElseThrow(() -> new AuctionDoesNotExistException(
+                .orElseThrow(() -> new  OffDoesNotExistException (
                         "Auction does not exist with this id:" + id + " in list of all Auctions."
                 ));
     }
 
-    public static void checkExistOfAuctionById(long id ,  List<Long> longList, Packable<?> packable) throws AuctionDoesNotExistException {
+    public static void checkExistOfAuctionById(long id ,  List<Long> longList, Packable<?> packable) throws  OffDoesNotExistException {
         if (longList.stream().noneMatch(Id -> id == Id)) {
-            throw new AuctionDoesNotExistException(
+            throw new OffDoesNotExistException(
                     "In the " + packable.getClass().getSimpleName() + " with id:" + packable.getId() + " the Auction with id:"+  id + " does not exist."
             );
         }
@@ -183,6 +184,22 @@ Off implements Packable<Off>, ForPend,Cloneable {
     }
 
     @Override
+    public Data<Off> pack() {
+        return null;
+    }
+
+    @Override
+    public Off dpkg(Data<Off> data) {
+        this.auctionId = (long) data.getFields().get(0);
+        this.productList = (List<Long>) data.getFields().get(1);
+        this.stateForPend = (String) data.getFields().get(2);
+        this.start = (LocalDate) data.getFields().get(3);
+        this.end = (LocalDate) data.getFields().get(4);
+        this.discount = (Discount) data.getFields().get(5);
+        return this;
+    }
+
+    @Override
     public String toString() {
         return "Auction{" +
                 "auctionId=" + auctionId +
@@ -195,4 +212,7 @@ Off implements Packable<Off>, ForPend,Cloneable {
     }
 
 
+    public double getOffDiscount(double price) {
+        return Math.min(discount.getPercent() * price / 100, discount.getAmount());
+    }
 }

@@ -25,7 +25,7 @@ public class Input {
                 show=false;
             }else
                 show=true;
-            output.manageCommand(command);
+            output.handleCommand(command);
         }
 
     }

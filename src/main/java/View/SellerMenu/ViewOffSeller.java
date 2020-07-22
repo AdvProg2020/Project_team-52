@@ -45,7 +45,7 @@ public class ViewOffSeller extends Menu {
 
     }
 
-    public void editOff(List<String> inputs) {
+    public void editOff(List<String> inputs) throws InvalidInputByUserException {
         String auctionId = inputs.get(0);
 
         System.out.println("Enter field name:");
@@ -64,7 +64,7 @@ public class ViewOffSeller extends Menu {
         }
     }
 
-    public void addOff() {
+    public void addOff() throws InvalidInputByUserException, ProductCantBeInMoreThanOneAuction {
         System.out.println("Enter information in this pattern :" + System.lineSeparator() +
                 "AuctionInfo :[auctionName] :[Start] :[End] :[percent] :[maxAmount]"
         );

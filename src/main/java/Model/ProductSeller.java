@@ -1,9 +1,10 @@
 package Model;
 
 import Model.Account.Seller;
+import Exception.*;
 
 public class ProductSeller {
-    private int sellerId;
+    private long sellerId;
 
     private long number;
 
@@ -13,7 +14,7 @@ public class ProductSeller {
 
     private Seller seller;
 
-    private long price;
+    private double price;
 
     private Long priceInOff;
 
@@ -24,21 +25,15 @@ public class ProductSeller {
 
     }
 
-    public ProductSeller(int sellerId, Product product, int remainingItems) {
-        this.sellerId = sellerId;
-        this.product = product;
-        this.remainingItems = remainingItems;
-    }
 
-    public ProductSeller(int sellerId, Product product, int remainingItems, long price, long priceInOff) {
+
+    public ProductSeller(long sellerId, long number, double price) {
         this.sellerId = sellerId;
-        this.product = product;
-        this.remainingItems = remainingItems;
+        this.number = number;
         this.price = price;
-        this.priceInOff = priceInOff;
     }
 
-    public int getSellerId() {
+    public long getSellerId() {
         return sellerId;
     }
 
@@ -51,7 +46,7 @@ public class ProductSeller {
         return seller;
     }
 
-    public long getPrice() {
+    public double getPrice() {
         return price;
     }
 
@@ -59,7 +54,7 @@ public class ProductSeller {
         return remainingItems;
     }
 
-    public long getNumber() {
+    public  long getNumber() {
         return number;
     }
 
@@ -69,7 +64,7 @@ public class ProductSeller {
 
     public void sell(int amount) throws NotEnoughProductsException {
         if (remainingItems < amount) {
-            throw new NotEnoughProductsException("Not enough products", this);
+            throw new NotEnoughProductsException("Not enough products");
         }
         remainingItems -= amount;
     }
@@ -80,7 +75,7 @@ public class ProductSeller {
 
     public long getPriceInOff() {
         if (priceInOff == null) {
-            return price;
+            return (long) price;
         }
         return priceInOff;
     }
@@ -103,9 +98,5 @@ public class ProductSeller {
         this.sellerId = sellerId;
     }
 
-    @Override
-    public ProductSeller clone() {
-        return new ProductSeller(this.sellerId, this.product.clone(), this.remainingItems, this.price, this.priceInOff);
 
-    }
 }

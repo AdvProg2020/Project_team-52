@@ -18,7 +18,9 @@ import java.util.Map;
 public class Account implements Packable<Account> {
 
 
-    private int id;
+    protected static List<Account> list;
+    protected static List<Account> inRegistering = new ArrayList<>();
+    private long id;
 
     private String userName;
 
@@ -32,14 +34,10 @@ public class Account implements Packable<Account> {
 
     protected Info personalInfo;
 
-    protected static List<Account> inRegistering = new ArrayList<>();
 
 
     private Map<String, String> details;
 
-    private Account() {
-        details = new HashMap<>();
-    }
 
     public Account(String userName, String password, String email, Role role  , Info personalInfo ) {
         this.userName = userName;
@@ -49,19 +47,42 @@ public class Account implements Packable<Account> {
         details = new HashMap<>();
     }
 
+    protected Account(String userName) {
+        this.userName=userName;
+    }
 
-    public static void addAccount( Account account) {
+    public Account(long id, String userName, String password, Info personalInfo) {
+        this.id=id;
+        this.userName=userName;
+        this.password=password;
+        this.personalInfo=personalInfo;
+    }
+
+
+    public static void addAccount(Account account) {
         account.setId(AddingNew.getRegisteringId().apply(getList()));
-        List.add(account);
+        list.add(account);
         DataBase.save(account, true);
+    }
+
+    public static List<Account> getList() {
+        return list;
     }
 
     public static void removeFromInRegistering(Account account) {
         inRegistering.remove(account);
     }
 
-    public static void addToInRegisteringList(Manager manager) {
-        inRegistering.add(Account);
+    public static void addToInRegisteringList(Account account) {
+        inRegistering.add(account);
+    }
+
+    public static boolean isThereAnyInRegisteringWithThisUsername(String username) {
+        return inRegistering.stream().anyMatch(account -> username.equals(account.getUserName()));
+    }
+
+    public static boolean isThereAnyAccountWithThisUsername(String username) {
+        return list.stream().anyMatch(account -> username.equals(account.getUserName()));
     }
 
     public String getFullName() {
@@ -90,7 +111,8 @@ public class Account implements Packable<Account> {
         return null;
     }
 
-    public int getId() {
+    @Override
+    public long getId() {
         return id;
     }
 
@@ -142,7 +164,7 @@ public class Account implements Packable<Account> {
     }
 
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -172,20 +194,13 @@ public class Account implements Packable<Account> {
 
     public void pay(long amount) throws NotEnoughCreditException {
         if (amount > credit) {
-            throw new NotEnoughCreditException("You don't have enough creadit to pay " + amount, credit);
+            throw new NotEnoughCreditException("You don't have enough credit to pay " + amount+ credit);
         }
 
         credit -= amount;
     }
 
-    public static Account getAccountByUserName(String name) throws AccountDoesNotExistException {
-        return list.stream()
-                .filter(account -> name.equals(account.getUserName()))
-                .findFirst()
-                .orElseThrow(() -> new AccountDoesNotExistException(
-                        "The username:" + name + " not exist in all account list."
-                ));
-    }
+
 
     public static Account getAccountById(long id) throws AccountDoesNotExistException {
         return list.stream()
@@ -194,6 +209,15 @@ public class Account implements Packable<Account> {
                 .orElseThrow(() -> new AccountDoesNotExistException(
                         "The Account with the id:" + id + " not exist in all account list."
                 ));
+    }
+
+    public static Account getAccountByUserName(String name) throws AccountDoesNotExistException {
+        return list.stream()
+                .filter(account -> name.equals(account.getUserName()))
+                        .findFirst()
+                        .orElseThrow(() -> new AccountDoesNotExistException(
+                                "The username:" + name + " not exist in all account list."
+                        ));
     }
 
     public String getPassword() {
@@ -221,15 +245,21 @@ public class Account implements Packable<Account> {
         this.credit=credit;
     }
 
-    public void setPersonalInfo(Info info) {
-        this.setPersonalInfo(info) =setPersonalInfo(info);
+    public void setPersonalInfo(Info personalInfo) {
+        this.personalInfo = personalInfo;
     }
 
     public void acceptRequest(Request request) throws AccountDoesNotExistException {
         request.acceptRequest();
     }
 
-    public void declineRequest(Request requestById) {
+    public void declineRequest(Request requestById) throws AccountDoesNotExistException {
         requestById.declineRequest();
+    }
+    
+
+    public static void deleteAccount(Account account) {
+        list.removeIf(acc -> account.getId() == acc.getId());
+        DataBase.remove(account);
     }
 }

@@ -4,7 +4,10 @@ import Model.Data.Data;
 import Model.DataBase.DataBase;
 import Model.Interface.AddingNew;
 import Model.Interface.Packable;
+import Exception.*;
 
+
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -15,6 +18,9 @@ public class Cart implements Packable<Cart> {
     private List<Long> sellersId;
     private List<Long> productsId;
 
+    private Cart() {
+
+    }
 
 
     public long getId() {
@@ -88,9 +94,9 @@ public class Cart implements Packable<Cart> {
         double price = 0;
         for (int i = 0; i < productsId.size(); i++) {
             Product product = Product.getProductById(productsId.get(i));
-            Off auction = product.getOff();
-            if (auction != null) {
-                price += auction.getOffDiscount(product.getProductOfSellerById(sellersId.get(i)).getPrice());
+            Off off = product.getOff();
+            if (off != null) {
+                price += off.getOffDiscount(product.getProductOfSellerById(sellersId.get(i)).getPrice());
             }
         }
         return price;
@@ -121,6 +127,15 @@ public class Cart implements Packable<Cart> {
                 .addField(sellersId)
                 .setInstance(new Cart());
     }
+
+    @Override
+    public Cart dpkg(Data<Cart> data) {
+        this.id = (long) data.getFields().get(0);
+        this.productsId = (List<Long>) data.getFields().get(1);
+        this.sellersId  = (List<Long>) data.getFields().get(2);
+        return this;
+    }
+
 
     public Cart(long id, List<Long> sellersId, List<Long> productsId) {
         this.id = id;

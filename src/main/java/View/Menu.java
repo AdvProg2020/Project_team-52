@@ -1,5 +1,6 @@
 package View;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +23,7 @@ public abstract class Menu {
         this.name = name;
     }
 
-    public void patternToCommand(String command) throws NoSuchMethodException, IllegalAccessException {
+    public void patternToCommand(String command) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
 
         for (int i = 0; i < patternList.size(); i++) {
             Matcher matcher = patternList.get(i).matcher(command);
@@ -34,7 +35,7 @@ public abstract class Menu {
         System.out.println("Invalid command entered.");
     }
 
-    public void invokeMethod(String name, Matcher matcher) throws NoSuchMethodException, IllegalAccessException {
+    public void invokeMethod(String name, Matcher matcher) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
 
         Menu latestMenu = MenuManage.getLatestMenu();
         if (matcher.groupCount() == 0) {
@@ -98,7 +99,7 @@ public abstract class Menu {
 
         public void help () {
             System.out.println(
-                    "---------------------Help---------------------")
+                    "---------------------Help---------------------");
         }
 
 }

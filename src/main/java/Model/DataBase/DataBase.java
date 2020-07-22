@@ -42,7 +42,7 @@ public class DataBase {
                     .forEach(data -> {
                         try {
                             list.add(data.getInstance());
-                        } catch (ProductDoesNotExistException | AccountDoesNotExistException | DiscountCodeExpiredException | CategoryDoesNotExistException | CommentDoesNotExistException | AuctionDoesNotExistException | LogHistoryDoesNotExistException | CartDoesNotExistException e) {
+                        } catch (ProductDoesNotExistException | AccountDoesNotExistException | DiscountCodeExpiredException | CategoryDoesNotExistException | CommentDoesNotExistException | OffDoesNotExistException | LogHistoryDoesNotExistException | CartDoesNotExistException e) {
                             e.printStackTrace();
                         }
                     });

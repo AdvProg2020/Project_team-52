@@ -1,5 +1,6 @@
 package View;
 
+import Model.ModelUnit;
 import View.AccountMenu.CustomerMenu;
 import View.AccountMenu.ManagerMenu;
 import View.AccountMenu.SellerMenu;
@@ -20,7 +21,7 @@ import java.util.Scanner;
 public class MenuManage {
 
     private static Scanner scanner=new Scanner(System.in);
-    private static Menu latestMenu=UserAreaMenu.getInstance("userAreaMenu");
+    private static Menu latestMenu=UserMenu.getInstance("userAreaMenu");
     private static ModelUnit modelUnit = ModelUnit.getInstance();
 
 
@@ -28,7 +29,7 @@ public class MenuManage {
 
         CustomerMenu.getMenu().addSubMenu(ManageInfoMenu.getMenu())
                 .addSubMenu(ViewCartForCustomer.getMenu())
-                .addSubMenu(ViewOrderForCustomer.getMenu())
+                .addSubMenu(ViewOrderForCustomer.getMenu());
 
         MainMenu.getMenu().addSubMenu(ProductsMenu.getMenu())
                 .addSubMenu(OffMenu.getMenu());

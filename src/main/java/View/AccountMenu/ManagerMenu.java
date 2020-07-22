@@ -65,35 +65,30 @@ public class ManagerMenu extends Menu {
             System.out.println(" Enter information in correct format.");
             return;
         }
-
-
-
-
-    public void openManageRequestsMenu(){
-        System.out.println("All request: ");
-        managerController.showAllRequests().forEach(request ->
-                System.out.println(Shows.getShowRequest().apply(request))
-        );
-        MenuManage.setLatestMenu(ManageRequestForManager.getMenu());
     }
+
+        public void openManageRequestsMenu() {
+            System.out.println("All request: ");
+            managerController.showAllRequests().forEach(request ->
+                    System.out.println(Shows.getShowRequest().apply(request))
+            );
+        }
+
 
     public void openManageCategoriesMenu() {
-        System.out.println("All categories: ");
-        managerController.showAllCategories().forEach(category ->
-                System.out.println(Shows.getShowCategory().apply(category))
-        );
-        MenuManage.setLatestMenu(ManageCategoryForManager.getMenu());
-    }
+            System.out.println("All categories: ");
+            managerController.showAllCategories().forEach(category ->
+                    System.out.println(Shows.getShowCategory().apply(category))
+            );
+            MenuManage.setLatestMenu(ManageCategoryForManager.getMenu());
+        }
 
-
-
-    public void logout() {
+        public void logout() {
         MainMenu.getMenu().setParentMenu(UserMenu.getMenu());
         MenuManage.setLatestMenu(UserMenu.getMenu());
     }
 
-    @Override
-    public void show() {
+        public void show() {
         System.out.println(
                 "You are in managerMenu" + System.lineSeparator() +
                         "-------------------SubMenus-------------------" + System.lineSeparator() +
