@@ -19,6 +19,10 @@ public class Comment implements Packable<Comment> {
     private long goodId;
     private FieldList fieldList;
 
+    private Comment() {
+
+    }
+
 
     public long getId() {
         return commentId;
@@ -35,7 +39,6 @@ public class Comment implements Packable<Comment> {
         return userId;
     }
 
-   )
     public static List<Comment> getList() {
         return Collections.unmodifiableList(list);
     }
@@ -73,6 +76,15 @@ public class Comment implements Packable<Comment> {
                 .addField(goodId)
                 .addField(fieldList)
                 .setInstance(new Comment());
+    }
+    @Override
+    public Comment dpkg(Data<Comment> data) {
+        this.commentId = (long) data.getFields().get(0);
+        this.pendStatus = (String) data.getFields().get(1);
+        this.userId = (long) data.getFields().get(2);
+        this.goodId = (long) data.getFields().get(3);
+        this.fieldList = (FieldList) data.getFields().get(4);
+        return this;
     }
 
 

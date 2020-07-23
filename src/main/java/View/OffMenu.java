@@ -33,7 +33,7 @@ public class OffMenu extends Menu {
     public void offs() {
         List<Off> auctionList = offController.offs();
         auctionList.forEach(auction -> {
-            System.out.println(Shows.getShowAuction().apply(auction));
+            System.out.println(Shows.getShowOff().apply(auction));
             try {
                 List<Product> productList = offController.getProductOfAuction(auction.getId());
                 productList.forEach(product -> Shows.getShowProduct().apply(product));

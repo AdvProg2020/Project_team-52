@@ -6,15 +6,17 @@ import Model.Data.Data;
 import Model.DataBase.DataBase;
 import Model.Interface.AddingNew;
 import Model.Interface.Packable;
+import Exception.*;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.UUID;
 
-public class PromotionCode implements Packable<PromotionCode>, Cloneable {
-    private static List<PromotionCode> list;
+public class DiscountCode implements Packable<DiscountCode>, Cloneable {
+    private static List<DiscountCode> list;
 
     private static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
@@ -26,6 +28,9 @@ public class PromotionCode implements Packable<PromotionCode>, Cloneable {
     private long frequentUse;
     private List<Long> accountList = new ArrayList<>();
 
+    private DiscountCode() {
+
+    }
 
 
     public long getId() {
@@ -58,7 +63,7 @@ public class PromotionCode implements Packable<PromotionCode>, Cloneable {
 
 
 
-    public static List<PromotionCode> getList() {
+    public static List<DiscountCode> getList() {
         return Collections.unmodifiableList(list);
     }
 
@@ -86,8 +91,8 @@ public class PromotionCode implements Packable<PromotionCode>, Cloneable {
         this.id = id;
     }
 
-    public static void setList(List<PromotionCode> list) {
-        PromotionCode.list = list;
+    public static void setList(List<DiscountCode> list) {
+        DiscountCode.list = list;
     }
 
     public void addAccount(long accountId) {
@@ -100,23 +105,33 @@ public class PromotionCode implements Packable<PromotionCode>, Cloneable {
         DataBase.save(this);
     }
 
-    public static void addDiscountCode( PromotionCode promotionCode) {
-        promotionCode.setId(AddingNew.getRegisteringId().apply(PromotionCode.getList()));
-        list.add(promotionCode);
-        DataBase.save(promotionCode, true);
+    public static void addDiscountCode( DiscountCode discountCode) {
+        discountCode.setId(AddingNew.getRegisteringId().apply(DiscountCode.getList()));
+        list.add(discountCode);
+        DataBase.save(discountCode, true);
     }
 
-    public static void removeFromDiscountCode(PromotionCode promotionCode) {
-        list.removeIf(dis -> promotionCode.getId() == dis.getId());
-        DataBase.remove(promotionCode);
+    public static void removeFromDiscountCode(DiscountCode discountCode) {
+        list.removeIf(dis -> discountCode.getId() == dis.getId());
+        DataBase.remove(discountCode);
 
     }
-
+    @Override
+    public DiscountCode dpkg(Data<DiscountCode> data) {
+        this.id = (long) data.getFields().get(0);
+        this.discountCode = (String) data.getFields().get(1);
+        this.start = (LocalDate) data.getFields().get(2);
+        this.end = (LocalDate) data.getFields().get(3);
+        this.discount = (Discount) data.getFields().get(4);
+        this.frequentUse = (long) data.getFields().get(5);
+        this.accountList = (List<Long>) data.getFields().get(6);
+        return this;
+    }
 
 
     @Override
-    public Data<PromotionCode> pack() {
-        return new Data<PromotionCode>()
+    public Data<DiscountCode> pack() {
+        return new Data<DiscountCode>()
                 .addField(id)
                 .addField(discountCode)
                 .addField(start)
@@ -124,11 +139,11 @@ public class PromotionCode implements Packable<PromotionCode>, Cloneable {
                 .addField(discount)
                 .addField(frequentUse)
                 .addField(accountList)
-                .setInstance(new PromotionCode());
+                .setInstance(new DiscountCode());
     }
 
 
-    public static PromotionCode getDiscountCodeById(long id) throws DiscountCodeExpiredException {
+    public static DiscountCode getDiscountCodeById(long id) throws DiscountCodeExpiredException {
         return list.stream()
                 .filter(code -> id == code.getId())
                 .findFirst()
@@ -137,9 +152,9 @@ public class PromotionCode implements Packable<PromotionCode>, Cloneable {
                 ));
     }
 
-    public static PromotionCode getDiscountCodeByCode(String code) throws DiscountCodeExpiredException {
+    public static DiscountCode getDiscountCodeByCode(String code) throws DiscountCodeExpiredException {
         return list.stream()
-                .filter(promotionCode -> code.equals(promotionCode.getDiscountCode()))
+                .filter(discountCode -> code.equals(discountCode.getDiscountCode()))
                 .findFirst()
                 .orElseThrow(() -> new DiscountCodeExpiredException(
                         "DiscountCode with the code:" + code + " does not exist in list of all discountCodes."
@@ -154,7 +169,7 @@ public class PromotionCode implements Packable<PromotionCode>, Cloneable {
         return Math.min(discount.getAmount(), discount.getPercent() * price / 100);
     }
 
-    public void editField(@NotNull String fieldName, String value) throws FieldDoesNotExistException, NumberFormatException, DateTimeParseException {
+    public void editField(String fieldName, String value) throws FieldDoesNotExistException, NumberFormatException, DateTimeParseException {
 
         switch (fieldName) {
             case "start":
@@ -179,7 +194,7 @@ public class PromotionCode implements Packable<PromotionCode>, Cloneable {
 
     public void checkExpiredDiscountCode(boolean exception) throws DiscountCodeExpiredException, AccountDoesNotExistException {
         if (LocalDate.now().isAfter(end)) {
-            PromotionCode.removeFromDiscountCode(this);
+            DiscountCode.removeFromDiscountCode(this);
             List<Account> accounts = new ArrayList<>();
             for (long aLong : accountList) {
                 ((Customer) Account.getAccountById(aLong)).removeFromDiscountCodeList(id);
@@ -190,7 +205,7 @@ public class PromotionCode implements Packable<PromotionCode>, Cloneable {
         }
     }
 
-    public PromotionCode(String discountCode, LocalDate start, LocalDate end, Discount discount, long frequentUse) {
+    public DiscountCode(String discountCode, LocalDate start, LocalDate end, Discount discount, long frequentUse) {
         this.discountCode = discountCode;
         this.start = start;
         this.end = end;

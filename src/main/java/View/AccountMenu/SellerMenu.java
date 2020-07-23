@@ -64,14 +64,14 @@ public class SellerMenu extends Menu {
 
         try {
             Product product = sellerController.createTheBaseOfProduct(matcher.group(1), matcher.group(2), matcher.group(3), matcher.group(4), matcher.group(5));
-            if (saveProductInfo(product)){
+            if (saveProductInfo(product)) {
 
                 if (product.getCategory() != null && !saveCategoryInfo(product)) return;
 
                 System.out.println("Enter information for request: ");
                 String information = scanner.nextLine();
 
-                sellerController.sendRequest(product,information,"new");
+                sellerController.sendRequest(product, information, "new");
 
                 System.out.println("Product created.");
             }
@@ -194,3 +194,4 @@ public class SellerMenu extends Menu {
         );
 
     }
+}

@@ -2,7 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2fcde215-e894-4da2-8bd3-232ff087df23" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Exception/ManageRequestsforManagerMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Exception/TypeInvalidException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Model/DiscountCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Model/ModelUnit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/OffController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/OffController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/ProductsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/SellerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/SellerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/SignUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Exception/CanNotCreatMoreThanOneMangerBySignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exception/CanNotCreatMoreThanOneMangerBySignUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Exception/UserDoesNotLoginException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exception/UserDoesNotLoginException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Account/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Account/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Account/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Account/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Account/Guest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Account/Guest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Account/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Account/Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Account/Seller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Account/Seller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Data/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Data/Data.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/DataBase/DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/DataBase/DataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Field/SingleString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Field/SingleString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Interface/Filterable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Interface/Filterable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/LogHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/LogHistory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Off.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Off.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/ProductSeller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/ProductSeller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/PromotionCode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Request.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Score.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Score.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Sorter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Sorter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/AccountMenu/ManagerMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/AccountMenu/ManagerMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/AccountMenu/SellerMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/AccountMenu/SellerMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Input.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/LoginAndSigup/LogInMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/LoginAndSigup/LogInMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/LoginAndSigup/SignUpMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/LoginAndSigup/SignUpMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/ManagerMenu/ManageCategoryForManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/ManagerMenu/ManageCategoryForManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/MenuManage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/MenuManage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/OffMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/OffMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Output.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Output.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/SellerMenu/ViewOffSeller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/SellerMenu/ViewOffSeller.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +70,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="SvnConfiguration">
@@ -41,6 +89,9 @@
       <option name="presentableId" value="Default" />
       <updated>1589446881245</updated>
       <workItem from="1589446888050" duration="249000" />
+      <workItem from="1593952611361" duration="202000" />
+      <workItem from="1594329257196" duration="3540000" />
+      <workItem from="1595495918433" duration="253000" />
     </task>
     <task id="LOCAL-00001" summary="parimehr">
       <created>1589448854794</created>
@@ -63,21 +114,7 @@
       <option name="project" value="LOCAL" />
       <updated>1589874543167</updated>
     </task>
-    <task id="LOCAL-00004" summary="parimehr">
-      <created>1593215909819</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1593215909819</updated>
-    </task>
-    <task id="LOCAL-00005" summary="parimehr and kamyar">
-      <created>1593697895735</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1593697895735</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -86,33 +123,29 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="parimehr" />
-    <MESSAGE value="parimehr and kamyar" />
-    <option name="LAST_COMMIT_MESSAGE" value="parimehr and kamyar" />
+    <option name="LAST_COMMIT_MESSAGE" value="parimehr" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="264" y="23" key="CommitChangelistDialog2" timestamp="1593698937635">
-      <screen x="0" y="23" width="1280" height="730" />
+    <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1589874683333">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.800@0.0.1280.800" timestamp="1593215909512" />
-    <state x="264" y="23" key="CommitChangelistDialog2/0.23.1280.730@0.23.1280.730" timestamp="1593698937635" />
-    <state x="264" y="23" key="CommitChangelistDialog2/0.23.1280.732@0.23.1280.732" timestamp="1593697895273" />
+    <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.800@0.0.1280.800" timestamp="1589874683333" />
     <state x="264" y="23" key="CommitChangelistDialog2/0.23.1280.738@0.23.1280.738" timestamp="1589449412431" />
     <state x="264" y="23" key="CommitChangelistDialog2/0.23.1280.739@0.23.1280.739" timestamp="1589448854286" />
-    <state x="240" y="131" key="Vcs.Push.Dialog.v2" timestamp="1593698953282">
-      <screen x="0" y="23" width="1280" height="730" />
+    <state x="240" y="118" key="Vcs.Push.Dialog.v2" timestamp="1589874647011">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="240" y="118" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1593215921844" />
-    <state x="240" y="131" key="Vcs.Push.Dialog.v2/0.23.1280.730@0.23.1280.730" timestamp="1593698953282" />
-    <state x="240" y="131" key="Vcs.Push.Dialog.v2/0.23.1280.732@0.23.1280.732" timestamp="1593697931633" />
+    <state x="240" y="118" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1589874647011" />
     <state x="240" y="132" key="Vcs.Push.Dialog.v2/0.23.1280.738@0.23.1280.738" timestamp="1589449457171" />
     <state x="240" y="132" key="Vcs.Push.Dialog.v2/0.23.1280.739@0.23.1280.739" timestamp="1589448919476" />
-    <state x="423" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593215683073">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1595495911236">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1595495911236" />
+    <state x="451" y="295" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1594367538350">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="423" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.800@0.0.1280.800" timestamp="1593215683073" />
-    <state x="430" y="252" key="git4idea.ui.GitTagDialog" timestamp="1593216024234">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state x="430" y="252" key="git4idea.ui.GitTagDialog/0.0.1280.800@0.0.1280.800" timestamp="1593216024234" />
+    <state x="451" y="295" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1594367538350" />
   </component>
 </project>

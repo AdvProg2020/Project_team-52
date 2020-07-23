@@ -79,7 +79,7 @@ public class SellerController extends AccountController {
         return list;
     }
 
-    public Product createTheBaseOfProduct(String productName, String strCategoryId, String strAuctionId, String strNumberOfThis, String priceString) throws AuctionDoesNotExistException, CategoryDoesNotExistException {
+    public Product createTheBaseOfProduct(String productName, String strCategoryId, String strAuctionId, String strNumberOfThis, String priceString) throws OffDoesNotExistException, CategoryDoesNotExistException {
         long numberOfThis = Long.parseLong(strNumberOfThis);
         long categoryId = Long.parseLong(strCategoryId);
         long auctionId = Long.parseLong(strAuctionId);
@@ -99,6 +99,7 @@ public class SellerController extends AccountController {
         FieldList fieldList = createFieldList(fieldName, values);
         product.setCategoryInfo(new Info("CategoryInfo", fieldList, LocalDate.now()));
     }
+
 
     public void sendRequest(ForPend forPend, String information, String type) {
         ((Seller) controllerUnit.getAccount()).addToPendList(forPend);
@@ -126,7 +127,7 @@ public class SellerController extends AccountController {
                 throw new ProductCantBeInMoreThanOneAuction("Product with the id:" + aLong + " have auction. You can't add it");
             }
         }
-        auction.setProductList(productIds);
+        off.setProductList(productIds);
     }
 
     public void removeProduct(String productIdString, String information) throws ProductDoesNotExistException, NumberFormatException {
@@ -158,13 +159,9 @@ public class SellerController extends AccountController {
     public void editProduct(String strId, String fieldName, String newInfo, String information) throws OffDoesNotExistException, FieldDoesNotExistException, CategoryDoesNotExistException, ProductDoesNotExistException, NumberFormatException {
         long id = Long.parseLong(strId);
         Product.checkExistOfProductById(id, ((Seller) controllerUnit.getAccount()).getProductList(), controllerUnit.getAccount());
-        try {
-            Product product = (Product) Product.getProductById(id).clone();
-            product.editField(fieldName, newInfo);
-            this.sendRequest(product, information, "edit");
-        } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
-        }
+        Product product = (Product) Product.getProductById(id).clone();
+        product.editField(fieldName, newInfo);
+        this.sendRequest(product, information, "edit");
     }
 
     public void addProductsToOff(Off auction,List<String> productIdsString) throws ProductDoesNotExistException, ProductCantBeInMoreThanOneAuction, NumberFormatException {

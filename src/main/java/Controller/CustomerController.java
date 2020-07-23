@@ -16,22 +16,22 @@ import java.util.List;
 public class CustomerController extends AccountController {
     private static CustomerController customerController = new CustomerController();
 
-    private PromotionCode promotionCodeEntered = null;
+    private DiscountCode discountCodeEntered = null;
 
     public static CustomerController getInstance() {
         return customerController;
     }
 
 
-    private void setDiscountCodeEntered(PromotionCode promotionCodeEntered) {
-        this.promotionCodeEntered = promotionCodeEntered;
+    private void setDiscountCodeEntered(DiscountCode discountCodeEntered) {
+        this.discountCodeEntered = discountCodeEntered;
     }
 
     private void checkEnoughCredit() throws NotEnoughCreditException, ProductDoesNotExistException, SellerDoesNotSellOfThisProduct {
         double price = viewCart().getTotalPrice() - viewCart().getTotalAuctionDiscount();
 
-        if (promotionCodeEntered != null) {
-            price -= promotionCodeEntered.getDiscountCodeDiscount(viewCart().getTotalPrice());
+        if (discountCodeEntered != null) {
+            price -= discountCodeEntered.getDiscountCodeDiscount(viewCart().getTotalPrice());
         }
 
         if (((Customer) controllerUnit.getAccount()).getCredit() < price) {
@@ -83,15 +83,15 @@ public class CustomerController extends AccountController {
 
     public void checkIfProductBoughtToRate(long productId) throws CannotRateException, ProductDoesNotExistException, NumberFormatException {
         Product product = Product.getProductById(productId);
-        if (!product.getCustomer().contains(controllerUnit.getAccount().getId())) {
-            throw new CannotRateException("Cannot Rate. You must buy it first. ok?");
+        if (!product.getBuyerList().contains(controllerUnit.getAccount().getId())) {
+            throw new CannotRateException("buy it first");
         }
     }
 
     public double showTotalPrice() throws ProductDoesNotExistException, SellerDoesNotSellOfThisProduct {
         double price = viewCart().getTotalPrice() - viewCart().getTotalAuctionDiscount();
-        if (promotionCodeEntered != null) {
-            price -= promotionCodeEntered.getDiscountCodeDiscount(price);
+        if (discountCodeEntered != null) {
+            price -= discountCodeEntered.getDiscountCodeDiscount(price);
         }
         return price;
     }
@@ -113,10 +113,10 @@ public class CustomerController extends AccountController {
         return ((Customer) controllerUnit.getAccount()).getCredit();
     }
 
-    public List<PromotionCode> viewDiscountCodes() throws DiscountCodeExpiredException {
-        List<PromotionCode> list = new ArrayList<>();
-        for (Long aLong : ((Customer) controllerUnit.getAccount()).getPromotionCodeList()) {
-            PromotionCode discountCodeById = PromotionCode.getDiscountCodeById(aLong);
+    public List<DiscountCode> viewDiscountCodes() throws DiscountCodeExpiredException {
+        List<DiscountCode> list = new ArrayList<>();
+        for (Long aLong : ((Customer) controllerUnit.getAccount()).getDiscountCodeList()) {
+            DiscountCode discountCodeById = DiscountCode.getDiscountCodeById(aLong);
             list.add(discountCodeById);
         }
         return list;
@@ -137,18 +137,21 @@ public class CustomerController extends AccountController {
         return Product.getProductById(productId);
     }
 
+
     public void increase(String productIdString, String sellerIdString) throws NumberFormatException, ProductDoesNotExistException, ProductIsOutOfStockException, SellerDoesNotSellOfThisProduct {
         long productId = Long.parseLong(productIdString);
         long sellerId = Long.parseLong(sellerIdString);
         this.checkCartForProductId(productId);
-        ProductSeller productOfSellerById = Product.getProductById(productId).getProductSellerById(sellerId);
-        if (ProductSeller.getNumber() <= 0) {
+        ProductSeller productOfSellerById = Product.getProductById(productId).getProductOfSellerById(sellerId);
+        if (productOfSellerById.getNumber() <= 0) {
             throw new ProductIsOutOfStockException("Product is out of stock. You can't increase number of the order whit id:" + productIdString + " .");
         } else {
             productOfSellerById.setNumber(productOfSellerById.getNumber() - 1);
             ((Customer) controllerUnit.getAccount()).addToCart(productId, sellerId);
         }
     }
+
+
 
     public void decrease(String productIdString, String sellerIdString) throws NumberFormatException, ProductDoesNotExistException {
         long productId = Long.parseLong(productIdString);
@@ -157,7 +160,7 @@ public class CustomerController extends AccountController {
         ((Customer) controllerUnit.getAccount()).removeFromCart(productId, sellerId);
     }
 
-    public void receiveInformation( String postCode, String address) throws PostCodeInvalidException AddresInvalidException, FieldDoesNotExistException {
+    public void receiveInformation( String postCode, String address) throws PostCodeInvalidException, AddresInvalidException, FieldDoesNotExistException {
         if (!postCode.matches("\\d{10}")) {
             throw new PostCodeInvalidException("PostCode is Invalid.");
         }
@@ -176,7 +179,7 @@ public class CustomerController extends AccountController {
         List<ProductLog> productLogs = this.payment();
         LogHistory logHistory = new LogHistory(
                 showTotalPrice(),
-                promotionCodeEntered == null ? 0 : promotionCodeEntered.getDiscountCodeDiscount(viewCart().getTotalPrice() - viewCart().getTotalAuctionDiscount()),
+                discountCodeEntered == null ? 0 : discountCodeEntered.getDiscountCodeDiscount(viewCart().getTotalPrice() - viewCart().getTotalAuctionDiscount()),
                 viewCart().getTotalAuctionDiscount(),
                 new FieldList(Arrays.asList(new Field("customerName", customer.getUserName()), new Field("date", LocalDate.now().toString()))), // I don't know now. (for check)
                 productLogs
@@ -189,8 +192,8 @@ public class CustomerController extends AccountController {
         }
         Cart.removeCart(customer.getCart());
         customer.setCart(Cart.autoCreateCart());
-        if (promotionCodeEntered != null) {
-            customer.removeFromDiscountCodeList(promotionCodeEntered.getId());
+        if (discountCodeEntered != null) {
+            customer.removeFromDiscountCodeList(discountCodeEntered.getId());
             this.setDiscountCodeEntered(null);
         }
         DataBase.save(customer);
@@ -208,7 +211,7 @@ public class CustomerController extends AccountController {
         this.checkIfProductBoughtToRate(productId);
         Product product = Product.getProductById(productId);
         long numberOfBuyer = product.getScoreList().size();
-        long lastScore = (long) product.getAverageScore() * numberOfBuyer;
+        double lastScore = (double) product.getAverageScore() * numberOfBuyer;
         int newScore = (int) ((lastScore + rateNumber) / (numberOfBuyer + 1));
         Score score = new Score(controllerUnit.getAccount().getId(), productId, rateNumber);
         Score.addScore(score);

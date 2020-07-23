@@ -23,7 +23,7 @@ public class OffController {
 
     public Product showProduct(String productIdString) throws ProductDoesNotExistException, NumberFormatException {
         long productId = Long.parseLong(productIdString);
-        Product.checkExistOfProductById(productId, controllerSection.getOff().getProductList(), controllerSection.getOff());
+        Product.checkExistOfProductById(productId, controllerSection.getAuction().getProductList(), controllerSection.getAuction());
         Product product = Product.getProductById(productId);
         controllerSection.setProduct(product);
         return product;

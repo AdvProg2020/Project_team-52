@@ -2,6 +2,7 @@ package Model;
 
 import Exception.*;
 
+import Model.Data.Data;
 import Model.DataBase.DataBase;
 import Model.Field.SingleString;
 import Model.Interface.AddingNew;
@@ -122,6 +123,21 @@ public class Category implements Packable<Category>, Cloneable{
     @Override
     public Object clone() throws CloneNotSupportedException {
         return super.clone();
+    }
+
+    @Override
+    public Data<Category> pack() {
+        return null;
+    }
+
+    @Override
+    public Category dpkg(Data<Category> data) {
+        this.categoryId = (long) data.getFields().get(0);
+        this.name = (String) data.getFields().get(1);
+        this.categoryFields = (FieldList) data.getFields().get(2);
+        this.productList = (List<Long>) data.getFields().get(3);
+        this.subCategories = (List<Long>) data.getFields().get(4);
+        return this;
     }
 
     @Override

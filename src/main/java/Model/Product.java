@@ -6,14 +6,13 @@ import Model.DataBase.DataBase;
 import Model.Field.Field;
 import Model.Interface.AddingNew;
 import Model.Interface.Filterable;
+import Model.Interface.ForPend;
 import Model.Interface.Packable;
 import Exception.*;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
-public class Product  implements Packable<Product> , Filterable, Cloneable {
+public class Product implements Packable<Product>, Filterable, ForPend {
     private int productId;
 
     private String name;
@@ -21,7 +20,11 @@ public class Product  implements Packable<Product> , Filterable, Cloneable {
     private String productName;
 
     private  Off off;
-    private List<Score> scoreList;
+    private List<Long> scoreList;
+    private static List<Product> list;
+    private List<Long> buyerList = new ArrayList<>();
+
+
 
 
     private Double averageScore;
@@ -32,15 +35,19 @@ public class Product  implements Packable<Product> , Filterable, Cloneable {
 
     private Info categoryInfo;
 
+    private String requestCondition;
+
 
     private Category category;
 
     private List<ProductSeller> sellerList;
 
-    private List<Comment> commentList;
+    private List<Long> commentList;
 
-
-
+    private long accountId;
+    private String information;
+    private List<ProductSeller> sellersOfProduct;
+    private String stateForPend;
 
 
     public Product() {
@@ -53,18 +60,34 @@ public class Product  implements Packable<Product> , Filterable, Cloneable {
     }
 
 
+    public Product(String name, Category category, Off off, ProductSeller productOfSeller) {
+        this.productName = name;
+        this.category = category;
+        this.off = off;
+        this.sellersOfProduct = new ArrayList<>();
+        sellersOfProduct.add(productOfSeller);
+    }
+
+    public Product(long accountId, String information ,String requestCondition) {
+        this.accountId = accountId;
+        this.information = information;
+        this.requestCondition=requestCondition;
+    }
 
     public Product(String name, String productName) {
             this.name = name;
             this.productName = productName;
             sellerList = new ArrayList<>();
-            commentList = new ArrayList<>();
+            commentList = new ArrayList<Long>();
         }
 
-    public static Object getList() {
-        return getList();
+    public static List<Product> getList() {
+        return list;
     }
 
+    public static void setList(List<Product> list) {
+        Product.list = list;
+    }
 
     public int getProductId() {
             return productId;
@@ -86,6 +109,7 @@ public class Product  implements Packable<Product> , Filterable, Cloneable {
         public String getProductName() {
             return productName;
         }
+
 
     public Info getProductInfo() {
         return productInfo;
@@ -143,7 +167,7 @@ public class Product  implements Packable<Product> , Filterable, Cloneable {
                 ));
     }
 
-        public List<Comment> getCommentList() {
+        public List<Long> getCommentList() {
             return commentList;
         }
 
@@ -174,34 +198,6 @@ public class Product  implements Packable<Product> , Filterable, Cloneable {
         }
 
 
-
-        public boolean hasSeller(Account seller) {
-             if sellerList.equals(seller)
-            {
-                return getSellerList().equals(seller);
-
-
-            }
-        }
-    public static Product getProductById(long id) throws ProductDoesNotExistException {
-        return list.stream()
-                .filter(product -> id == product.getId())
-                .findFirst()
-                .orElseThrow(() -> new ProductDoesNotExistException(
-                        "Product with the id:" + id + " does not exist in list of all products."
-                ));
-    }
-
-        public Request createRequest(RequestCondition requestCondition) {
-        Request Request = new Request(acountId,Information, , requestCondition);
-            if (requestCondition == RequestCondition.ADD) {
-                for (ProductSeller seller : sellerList) {
-                    Request.addSeller(seller.createProductSellerRequest(requestCondition));
-                }
-            }
-            return Request;
-        }
-
         public void setSellerList(List<ProductSeller> sellerList) {
             this.sellerList = sellerList;
         }
@@ -214,8 +210,8 @@ public class Product  implements Packable<Product> , Filterable, Cloneable {
     }
 
 
-    public static void addProduct( Product product) {
-        product.setProductId(AddingNew.getRegisteringId().apply(getList()));
+    public static void addProduct(Product product, boolean aNew) {
+        product.setProductId(Math.toIntExact(AddingNew.getRegisteringId().apply(getList())));
         Off Off = product.getOff();
         list.add(product);
         DataBase.save(product, true);
@@ -269,9 +265,7 @@ public class Product  implements Packable<Product> , Filterable, Cloneable {
         this.averageScore=averageScore;
     }
 
-    public void addScore(long id) {
-
-
+    public void addScore(long scoreId) {
         scoreList.add(scoreId);
             DataBase.save(this);
         }
@@ -283,5 +277,74 @@ public class Product  implements Packable<Product> , Filterable, Cloneable {
 
     public Off getOff() {
         return off;
+    }
+
+
+
+
+    public ProductSeller getProductSellerById(long sellerId) throws  SellerDoesNotSellOfThisProduct{
+        return sellersOfProduct.stream()
+                .filter(productSeller -> sellerId == productSeller.getSellerId())
+                .findFirst()
+                .orElseThrow(() -> new SellerDoesNotSellOfThisProduct(
+                        "Seller with the id:" + sellerId + " does not sell the product with id:" + productId + " ."
+                ));
+    }
+
+    public void setOff(Off off) {
+        this.off=off;
+    }
+
+    public ProductSeller getProductOfSellerById(long sellerId)  throws SellerDoesNotSellOfThisProduct{
+        return sellersOfProduct.stream()
+                .filter(productSeller -> sellerId == productSeller.getSellerId())
+                .findFirst()
+                .orElseThrow(() -> new SellerDoesNotSellOfThisProduct(
+                        "Seller with the id:" + sellerId + " does not sell the product with id:" + productId + " ."
+                ));
+
+    }
+
+    public void editField(String fieldName, String value) throws FieldDoesNotExistException, OffDoesNotExistException, NumberFormatException, CategoryDoesNotExistException, OffDoesNotExistException {
+
+        switch (fieldName) {
+            case "productName":
+                setProductName(value);
+                break;
+            case "category":
+                setCategory(Category.getCategoryById(Long.parseLong(value)));
+                break;
+            case "Auction":
+                setOff(Off.getAuctionById(Long.parseLong(value)));
+                break;
+            default:
+                Field field;
+                if (productInfo.getList().isFieldWithThisName(fieldName)) {
+                    field = productInfo.getList().getFieldByName(fieldName);
+                } else
+                    field = categoryInfo.getList().getFieldByName(fieldName);
+
+                field.setString(value);
+        }
+    }
+
+
+    public void setCategoryInfo(Info categoryInfo) {
+        this.categoryInfo = categoryInfo;
+    }
+
+
+    @Override
+    public void setStateForPend(String stateForPend) {
+        this.stateForPend=stateForPend;
+    }
+
+    @Override
+    public String getStateForPend() {
+        return null;
+    }
+
+    public List<Long> getBuyerList() {
+        return Collections.unmodifiableList(buyerList);
     }
 }

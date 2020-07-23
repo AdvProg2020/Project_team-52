@@ -4,6 +4,7 @@ import Model.Data.Data;
 import Model.DataBase.DataBase;
 import Model.Interface.AddingNew;
 import Model.Interface.Packable;
+import Exception.*;
 
 import java.util.Collections;
 import java.util.List;
@@ -17,6 +18,9 @@ public class LogHistory implements Packable<LogHistory>{
     private double auctionDiscount;
     private FieldList fieldList;
     private List<ProductLog> productLogList;
+
+    private LogHistory() {
+    }
 
 
     public static List<LogHistory> getList() {
@@ -96,6 +100,17 @@ public class LogHistory implements Packable<LogHistory>{
         this.auctionDiscount = auctionDiscount;
         this.fieldList = fieldList;
         this.productLogList = productLogList;
+    }
+
+    @Override
+    public LogHistory dpkg(Data<LogHistory> data) {
+        this.logHistoryId = (long) data.getFields().get(0);
+        this.finalAmount = (double) data.getFields().get(1);
+        this.discountAmount = (double) data.getFields().get(2);
+        this.auctionDiscount = (double) data.getFields().get(3);
+        this.fieldList = (FieldList) data.getFields().get(4);
+        this.productLogList = (List<ProductLog>) data.getFields().get(5);
+        return this;
     }
     @Override
     public String toString() {

@@ -9,4 +9,13 @@ public class Manager extends Account {
         super(userName, password, email, role, personalInfo);
     }
 
+
+    public Manager(String userName) {
+        super(userName);
+    }
+
+
+    public static boolean isThereAnyManager() {
+        return list.stream().anyMatch(account -> account instanceof Manager);
+    }
 }

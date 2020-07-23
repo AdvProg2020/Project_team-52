@@ -12,7 +12,8 @@ import java.util.List;
 
 public class Seller extends Account{
 
-    private List<Off> allOffs;
+    private List<Off> allOffs=new ArrayList<>();
+    private double balance;
 
     private Info companyInfo;
     private List<Long> logHistoryList = new ArrayList<>();
@@ -20,14 +21,17 @@ public class Seller extends Account{
     private List<Long> auctionList = new ArrayList<>();
     private List<ForPend> forPendList = new ArrayList<>();
 
-    public Seller() {
-        allOffs = new ArrayList<>();
-    }
+
 
     public Seller(String username, String password, String email, Role role,Info personalIfo) {
         super(username, password, email, role,personalIfo);
         allOffs = new ArrayList<>();
     }
+
+    public Seller(String username) {
+        super(username);
+    }
+
 
     public void setCompanyName(String companyName) {
         getDetails().put("Company Name", companyName);
@@ -89,7 +93,7 @@ public class Seller extends Account{
         DataBase.save(this);
     }
 
-    public List<long> getLogHistoryList() {
+    public List<Long> getLogHistoryList() {
         return logHistoryList;
     }
 
@@ -100,5 +104,21 @@ public class Seller extends Account{
 
     public List<Long> getOffList() {
         return getOffList();
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public Info getCompanyInfo() {
+        return companyInfo;
+    }
+
+    public List<Long> getProductList() {
+        return productList;
     }
 }

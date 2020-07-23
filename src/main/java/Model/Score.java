@@ -4,6 +4,7 @@ import Model.Data.Data;
 import Model.DataBase.DataBase;
 import Model.Interface.AddingNew;
 import Model.Interface.Packable;
+import Exception.*;
 
 import java.util.Collections;
 import java.util.List;
@@ -53,6 +54,11 @@ public class Score implements Packable<Score> {
                 .addField(goodId)
                 .addField(scoreNum)
                 .setInstance(new Score());
+    }
+
+    @Override
+    public Score dpkg(Data<Score> data) {
+        return null;
     }
 
 

@@ -2,26 +2,27 @@ package Model.Account;
 
 import Model.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Customer extends Account {
-    private List<Request> requestList;
+    private List<Request> requestList=new ArrayList<>();
 
     private List<Long> logHistoryList = new ArrayList<>();
     private Cart cart;
     private List<Long> discountCodeList = new ArrayList<>();
 
-    private List<Off> availableOff;
+    private List<Off> availableOff=new ArrayList<>();
 
-    public Customer() {
-        requestList = new ArrayList<>();
-        availableOff = new ArrayList<>();
-    }
 
     public Customer(String username, String password, String email, Role role, Info personalInfo) {
         super(username, password, email, role,personalInfo);
         requestList = new ArrayList<>();
         availableOff = new ArrayList<>();
+    }
+
+    public Customer(String username) {
+        super(username);
     }
 
 
@@ -53,7 +54,7 @@ public class Customer extends Account {
         cart.addProductToCart(sellerId, productId);
     }
 
-    public void addToLogHistoryList(long id) {
+    public void addToLogHistoryList(long logHistoryId) {
         logHistoryList.add(logHistoryId);
     }
 
@@ -61,7 +62,7 @@ public class Customer extends Account {
             this.cart = cart;
     }
 
-    public void removeFromDiscountCodeList(long id) {
+    public void removeFromDiscountCodeList(long discountCodeId) {
 
             discountCodeList.remove(discountCodeId);
 
@@ -69,5 +70,9 @@ public class Customer extends Account {
 
     public List<Long> getLogHistoryList() {
         return logHistoryList;
+    }
+
+    public List<Long> getDiscountCodeList() {
+        return discountCodeList;
     }
 }

@@ -17,7 +17,7 @@ public class Data<T extends Packable<T>> {
         return Collections.unmodifiableList(this.fields);
     }
 
-    public T getInstance() throws ProductDoesNotExistException, AccountDoesNotExistException, DiscountCodeExpiredException, CategoryDoesNotExistException, CommentDoesNotExistException, AuctionDoesNotExistException, CartDoesNotExistException, LogHistoryDoesNotExistException {
+    public T getInstance() throws ProductDoesNotExistException, AccountDoesNotExistException, DiscountCodeExpiredException, CategoryDoesNotExistException, CommentDoesNotExistException, OffDoesNotExistException, CartDoesNotExistException, LogHistoryDoesNotExistException {
         return instance.dpkg(this);
     }
 

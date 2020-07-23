@@ -31,7 +31,7 @@ public class SignUpMenu extends Menu {
         return Optional.ofNullable(menu).orElseThrow(() -> new NullPointerException("getting null in SignUpMenu."));
     }
 
-    public void createAccount(List<String> inputs) {
+    public void createAccount(List<String> inputs) throws TypeInvalidException, CanNotCreatMoreThanOneMangerBySignUp {
         Account account;
         try {
             account = signUpController.creatTheBaseOfAccount(inputs.get(0), inputs.get(1));
