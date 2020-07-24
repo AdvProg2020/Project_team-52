@@ -120,4 +120,13 @@ public class SignUpMenu extends Menu {
     public void show() {
         System.out.println("You're in SignUpMenu.");
     }
+    @Override
+    public void help() {
+        super.help();
+        System.out.println(
+                "createAccount [type] [userName] : that type can be manager, customer, seller and " +
+                        "userName can contain a-z , A-Z , _ (@_@)" + System.lineSeparator() +
+                        "----------------------------------------------"
+        );
+    }
 }
