@@ -66,4 +66,15 @@ public class ManageRequestForManager extends Menu {
     public void show() {
         System.out.println("You're in ManageRequestsByManagerMenu.");
     }
+
+    @Override
+    public void help() {
+        super.help();
+        System.out.println(
+                "showDetails [requestId]: To show details" + System.lineSeparator() +
+                        "acceptRequest [requestId]: To accept request" + System.lineSeparator() +
+                        "declineRequest [requestId]: To decline request" + System.lineSeparator() +
+                        "----------------------------------------------"
+        );
+    }
 }

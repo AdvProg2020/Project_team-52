@@ -102,7 +102,16 @@ public class ViewOffSeller extends Menu {
 
     @Override
     public void show() {
-        System.out.println("You're in ViewOffsBySellerMenu");
+        System.out.println("You're in ViewOffsSellerMenu");
     }
-
+    @Override
+    public void help() {
+        super.help();
+        System.out.println(
+                "viewOff [OffId] : To show off by id" + System.lineSeparator() +
+                        "editOff [OffId] : To edit an off" + System.lineSeparator() +
+                        "addOff : To add an off" + System.lineSeparator() +
+                        "----------------------------------------------"
+        );
+    }
 }

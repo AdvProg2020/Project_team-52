@@ -40,6 +40,15 @@ public class ManageProductForManager extends Menu {
 
     @Override
     public void show() {
-        System.out.println("You are in manage products by manager menu.");
+        System.out.println("You are in manage products for manager menu.");
+    }
+
+    @Override
+    public void help() {
+        super.help();
+        System.out.println(
+                "remove [productId] : To remove a product" + System.lineSeparator() +
+                        "----------------------------------------------"
+        );
     }
 }

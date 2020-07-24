@@ -84,6 +84,17 @@ public class ManageCategoryForManager extends Menu {
 
     @Override
     public void show() {
-        System.out.println("You're in ManageCategoriesByManagerMenu.");
+        System.out.println("You're in ManageCategoriesForManagerMenu.");
+    }
+
+    @Override
+    public void help() {
+        super.help();
+        System.out.println(
+                "edit [categoryId]: To edit category by name" + System.lineSeparator() +
+                        "add [categoryName]: To add category by name" + System.lineSeparator() +
+                        "remove [categoryName]: To remove category by name" + System.lineSeparator() +
+                        "----------------------------------------------"
+        );
     }
 }
