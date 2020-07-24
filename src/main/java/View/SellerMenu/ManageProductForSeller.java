@@ -73,6 +73,16 @@ public class ManageProductForSeller extends Menu {
 
     @Override
     public void show() {
-        System.out.println("You are in manage products by seller menu.");
+        System.out.println("You are in manage products for seller menu.");
+    }
+
+    @Override
+    public void help() {
+        super.help();
+        System.out.println("view[productId] : To view product" + System.lineSeparator() +
+                "viewBuyers [productId] : To show buyers of a product " + System.lineSeparator() +
+                "edit[productId] : To edit a product" + System.lineSeparator() +
+                "----------------------------------------------"
+        );
     }
 }

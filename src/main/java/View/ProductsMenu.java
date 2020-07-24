@@ -62,9 +62,16 @@ public class ProductsMenu extends Menu {
     public void show() {
         System.out.println("you are in products menu" + System.lineSeparator() +
                 "-------------------SubMenus-------------------" + System.lineSeparator() +
-                "1.FilteringMenu" + System.lineSeparator() +
-                "2.SortingMenu" + System.lineSeparator() +
                 "3.productMenu" + System.lineSeparator() +
                 "----------------------------------------------");
+    }
+    @Override
+    public void help() {
+        super.help();
+        System.out.println(
+                "viewCategories : to view categories" + System.lineSeparator() +
+                        "showProduct [productId]: to view a product" + System.lineSeparator() +
+                        "----------------------------------------------"
+        );
     }
 }

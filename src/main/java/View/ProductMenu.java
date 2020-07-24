@@ -64,6 +64,16 @@ public class ProductMenu extends Menu {
 
     @Override
     public void show() {
-        System.out.println("You're in ProductMenu.KeKeKe!");
+        System.out.println("You're in ProductMenu");
+    }
+    @Override
+    public void help() {
+        super.help();
+        System.out.println("digest : To show product information" + System.lineSeparator() +
+                "attributes : To full information" + System.lineSeparator() +
+                "compare [anotherId] : To compare" + System.lineSeparator() +
+                "Comments : To comment" + System.lineSeparator() +
+                "----------------------------------------------"
+        );
     }
 }

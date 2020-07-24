@@ -49,4 +49,14 @@ public class CommentMenu extends Menu {
     public void show() {
         System.out.println(" comment menu ");
     }
+
+
+    @Override
+    public void help() {
+        super.help();
+        System.out.println(
+                "addComment [title] [content] : To share your comment with us." + System.lineSeparator() +
+                        "----------------------------------------------"
+        );
+    }
 }

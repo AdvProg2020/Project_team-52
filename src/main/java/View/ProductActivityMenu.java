@@ -52,6 +52,14 @@ public class ProductActivityMenu extends Menu {
 
     @Override
     public void show() {
-        System.out.println("You're in DigestProductMenu");
+        System.out.println("You're in ProductActivtyMenu");
+    }
+    @Override
+    public void help() {
+        super.help();
+        System.out.println(
+                "addToCart : To add a good" + System.lineSeparator() +
+                        "----------------------------------------------"
+        );
     }
 }
