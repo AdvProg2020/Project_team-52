@@ -34,7 +34,7 @@ public class Chat {
         messages.add(message);
     }
 
-    public void addMembers(Account... accounts) {
+    public void addMembers(Account accounts) {
         Collections.addAll(this.members, accounts);
     }
 
