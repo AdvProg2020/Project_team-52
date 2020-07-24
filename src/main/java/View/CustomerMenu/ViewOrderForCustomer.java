@@ -53,6 +53,15 @@ public class ViewOrderForCustomer extends Menu {
 
     @Override
     public void show() {
-        System.out.println("view orders by buyer menu.");
+        System.out.println("view orders for customer menu.");
+    }
+
+    @Override
+    public void help() {
+        super.help();
+        System.out.println("showOrder [order id] :To show orders from you" + System.lineSeparator() +
+                "rate [product id] [1-5] :To rate a product from 1 to 5" + System.lineSeparator() +
+                "----------------------------------------------"
+        );
     }
 }

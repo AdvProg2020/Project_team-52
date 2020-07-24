@@ -87,7 +87,7 @@ public class CustomerMenu extends Menu {
     @Override
     public void show() {
         System.out.println(
-                "You're in BuyerMenu" + System.lineSeparator() +
+                "You're in CustomerMenu" + System.lineSeparator() +
                         "-------------------SubMenus-------------------" + System.lineSeparator() +
                         "1.MainMenu" + System.lineSeparator() +
                         "2.ManageInfo" + System.lineSeparator() +
@@ -96,4 +96,21 @@ public class CustomerMenu extends Menu {
                         "----------------------------------------------"
         );
     }
+
+    @Override
+    public void help() {
+        super.help();
+        System.out.println(
+                "openMainMenu:to open main menu" + System.lineSeparator() +
+                        "viewPersonalInfo : To open manageInfo menu" + System.lineSeparator() +
+                        "viewCart : To open cart menu" + System.lineSeparator() +
+                        "viewBalance : To show balance" + System.lineSeparator() +
+                        "viewDiscountCodes : To show discounts" + System.lineSeparator() +
+                        "viewOrders : To open Orders menu" + System.lineSeparator() +
+                        "logout : To logout" + System.lineSeparator() +
+                        "charge Account [amount( Just Integer)] : To logout" + System.lineSeparator() +
+                        "----------------------------------------------"
+        );
+    }
+
 }

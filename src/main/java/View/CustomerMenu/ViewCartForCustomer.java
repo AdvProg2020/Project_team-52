@@ -85,7 +85,19 @@ public class ViewCartForCustomer extends Menu {
 
     @Override
     public void show() {
-        System.out.println("You're in ViewCartByBuyerMenu.");
+        System.out.println("You're in View Cart For Customer Menu.");
     }
-
+    @Override
+    public void help() {
+        super.help();
+        System.out.println(
+                "show products : To show product" + System.lineSeparator() +
+                        "viewProduct [productId] : To view cart" + System.lineSeparator() +
+                        "increase [productId] : To increase number of that product" + System.lineSeparator() +
+                        "decrease [productId] : To decrease number of that product" + System.lineSeparator() +
+                        "show total price : To show total price" + System.lineSeparator() +
+                        "purchase : To purchase" + System.lineSeparator() +
+                        "----------------------------------------------"
+        );
+    }
 }

@@ -194,4 +194,22 @@ public class SellerMenu extends Menu {
         );
 
     }
+    @Override
+    public void help() {
+        super.help();
+        System.out.println(
+                "openMainMenu:to open main menu" + System.lineSeparator() +
+                        "viewPersonalInfo : To open manage info menu" + System.lineSeparator() +
+                        "viewCompanyInformation : To view company information" + System.lineSeparator() +
+                        "viewSalesHistory : To view sales history" + System.lineSeparator() +
+                        "manageProducts : to open manage product menu" + System.lineSeparator() +
+                        "addProduct : To add new product" + System.lineSeparator() +
+                        "removeProduct [productCodeId]: To remove a product" + System.lineSeparator() +
+                        "showCategories : To view categories" + System.lineSeparator() +
+                        "viewOffs : To open view off menu" + System.lineSeparator() +
+                        "viewBalance : To view balance" + System.lineSeparator() +
+                        "logout : To logout" + System.lineSeparator() +
+                        "----------------------------------------------"
+        );
+    }
 }
