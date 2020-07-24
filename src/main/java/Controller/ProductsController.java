@@ -37,7 +37,7 @@ public class ProductsController {
 
     private SortElement sortElement = SortElement.DEFAULT;
 
-    private static List<Product> productList = new ArrayList<>(Product.getList());
+    private static List<Product> productList =null;
 
     private static ProductsController productsController = new ProductsController();
 
