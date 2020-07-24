@@ -64,4 +64,13 @@ public class LogInMenu extends Menu {
     public void show() {
         System.out.println("You're in LogInMenu");
     }
+
+    @Override
+    public void help() {
+        super.help();
+        System.out.println(
+                "login [username] [password]: to login to your account" + System.lineSeparator() +
+                        "----------------------------------------------"
+        );
+    }
 }

@@ -97,9 +97,12 @@ public abstract class Menu {
 
         public abstract void show ();
 
-        public void help () {
-            System.out.println(
-                    "---------------------Help---------------------");
-        }
+    public void help () {
+        System.out.println(
+                "---------------------Help---------------------"
+                        + System.lineSeparator() +
+                        "exit : To exit program" + System.lineSeparator() +
+                        "back : To back to previous menu");
+    }
 
 }
