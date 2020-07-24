@@ -18,13 +18,17 @@ import java.util.Map;
 public class Account implements Packable<Account> {
 
 
-    protected static List<Account> list;
+    protected static List<Account> list = new ArrayList<>();
     protected static List<Account> inRegistering = new ArrayList<>();
     private long id;
 
     private String userName;
 
     private String password;
+
+    private String token;
+
+    private int bankAccountId;
 
     private String email;
 
@@ -36,7 +40,7 @@ public class Account implements Packable<Account> {
 
 
 
-    private Map<String, String> details;
+    private Map<String, String> details = new HashMap<>();
 
 
     public Account(String userName, String password, String email, Role role  , Info personalInfo ) {
@@ -44,7 +48,6 @@ public class Account implements Packable<Account> {
         this.password = password;
         this.email = email;
         this.role = role;
-        details = new HashMap<>();
     }
 
     protected Account(String userName) {
@@ -261,5 +264,21 @@ public class Account implements Packable<Account> {
     public static void deleteAccount(Account account) {
         list.removeIf(acc -> account.getId() == acc.getId());
         DataBase.remove(account);
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public int getBankAccountId() {
+        return bankAccountId;
+    }
+
+    public void setBankAccountId(int bankAccountId) {
+        this.bankAccountId = bankAccountId;
     }
 }

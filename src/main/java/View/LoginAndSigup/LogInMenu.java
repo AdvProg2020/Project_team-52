@@ -1,5 +1,8 @@
 package View.LoginAndSigup;
 
+import Bank.BankException;
+import Bank.BankService;
+import Bank.BankServiceImpl;
 import Controller.ControllerSection;
 import Controller.LoginController;
 import Model.Account.Account;
@@ -20,6 +23,8 @@ import java.util.Optional;
 
 public class LogInMenu extends Menu {
     private static LogInMenu menu;
+
+    private static BankService bankService = new BankServiceImpl();
 
     public static LogInMenu getInstance(String name) {
         if (menu == null) {
@@ -43,6 +48,14 @@ public class LogInMenu extends Menu {
             account = LoginController.getInstance().login(inputs.get(0), inputs.get(1));
         } catch (AccountDoesNotExistException | UserNameTooShortException | UserNameInvalidException | PasswordInvalidException e) {
             System.out.println(e.getMessage());
+            return;
+        }
+
+        try {
+            String token = bankService.getToken(inputs.get(0), inputs.get(1));
+            account.setToken(token);
+        } catch (BankException ex) {
+            System.out.println("ERROR: " + ex.getMessage());
             return;
         }
 

@@ -1,6 +1,12 @@
 package View;
 
+import Bank.BankException;
+import Bank.BankService;
+import Bank.BankServiceImpl;
+import Controller.ControllerSection;
 import Controller.ProductController;
+import Model.Account.Account;
+import Model.Account.Customer;
 import View.LoginAndSigup.LogInMenu;
 import Exception.*;
 
@@ -12,6 +18,10 @@ public class ProductActivityMenu extends Menu {
 
     private static ProductActivityMenu menu;
     private static ProductController productController = ProductController.getInstance();
+
+    private static BankService bankService = new BankServiceImpl();
+    private static ControllerSection controllerSection = ControllerSection.getInstance();
+
 
     private ProductActivityMenu(String name) {
         super(name);
@@ -50,6 +60,25 @@ public class ProductActivityMenu extends Menu {
         }
     }
 
+    public void checkout() {
+        try {
+            Customer customer = (Customer) controllerSection.getAccount();
+
+            int receiptId = bankService.createReceipt(
+                    customer.getToken(),
+                    "withdraw",
+                    (int) customer.getCart().getTotalPrice(),
+                    customer.getBankAccountId(),
+                    -1,
+                    "checkout"
+            );
+            bankService.pay(receiptId);
+            System.out.println("Successful");
+        } catch (Exception ex) {
+            System.out.println("ERROR: " + ex.getMessage());
+        }
+    }
+
     @Override
     public void show() {
         System.out.println("You're in ProductActivtyMenu");
@@ -59,6 +88,7 @@ public class ProductActivityMenu extends Menu {
         super.help();
         System.out.println(
                 "addToCart : To add a good" + System.lineSeparator() +
+                        "checkout : To pay cart and checkout" + System.lineSeparator() +
                         "----------------------------------------------"
         );
     }

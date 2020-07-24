@@ -1,5 +1,8 @@
 package View.LoginAndSigup;
 
+import Bank.BankException;
+import Bank.BankService;
+import Bank.BankServiceImpl;
 import Controller.SignUpController;
 import Model.Account.Account;
 import View.Menu;
@@ -15,6 +18,8 @@ public class SignUpMenu extends Menu {
     private static SignUpMenu menu;
 
     private static SignUpController signUpController = SignUpController.getInstance();
+
+    private static BankService bankService = new BankServiceImpl();
 
     private SignUpMenu(String name) {
         super(name);
@@ -60,11 +65,26 @@ public class SignUpMenu extends Menu {
 
         if (!createPersonalInfo(account)) return;
 
+        if (!createBankInfo(account)) return;
+
         if (inputs.get(0).equals("Seller") && !createCompanyInfo(account)) return;
 
         System.out.println("register successful.");
 
         MenuManage.setLatestMenu(LogInMenu.getMenu());
+    }
+
+    public boolean createBankInfo(Account account) {
+        try {
+            int accountId = bankService.createAccount(account.getFirstName(), account.getLastName(),
+                    account.getUserName(), account.getPassword(), account.getPassword());
+            account.setBankAccountId(accountId);
+
+            return true;
+        } catch (BankException ex) {
+            System.out.println("ERROR: " + ex.getMessage());
+            return false;
+        }
     }
 
     public boolean createPersonalInfo(Account account) {
