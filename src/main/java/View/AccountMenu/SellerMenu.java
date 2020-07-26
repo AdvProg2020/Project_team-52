@@ -45,7 +45,7 @@ public class SellerMenu extends Menu {
     }
 
     public void manageProducts() {
-        MenuManage.setLatestMenu(ManageProductForManager.getMenu());
+        MenuManage.setLatestMenu(ManageProductForSeller.getMenu());
     }
 
     public void addProduct() {
