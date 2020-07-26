@@ -93,12 +93,11 @@ public class ManagerMenu extends Menu {
                 "You are in managerMenu" + System.lineSeparator() +
                         "-------------------SubMenus-------------------" + System.lineSeparator() +
                         "1.MainMenu" + System.lineSeparator() +
-                        "2.ManageUsersMenu" + System.lineSeparator() +
-                        "3.ManageProductsMenu" + System.lineSeparator() +
-                        "4.ManageRequestsMenu" + System.lineSeparator() +
-                        "5.ManageCategoriesMenu" + System.lineSeparator() +
-                        "6.ManageIfo" + System.lineSeparator() +
-                        "7.ViewDiscountCodesByManagerMenu" + System.lineSeparator() +
+                        "2.ManageProductsMenu" + System.lineSeparator() +
+                        "3.ManageRequestsMenu" + System.lineSeparator() +
+                        "4.ManageCategoriesMenu" + System.lineSeparator() +
+                        "5.ManageIfo" + System.lineSeparator() +
+
                         "----------------------------------------------"
         );
     }
@@ -108,15 +107,10 @@ public class ManagerMenu extends Menu {
         System.out.println(
                 "openMainMenu:to open main menu" + System.lineSeparator() +
                         "viewPersonalInfo : To open manageInfo menu" + System.lineSeparator() +
-                        "openManageUsersMenu : To open users menu and view users " + System.lineSeparator() +
                         "openManageProductsMenu : To open products menu" + System.lineSeparator() +
-                        "createDiscountCode : To create new discount code" + System.lineSeparator() +
-                        "viewDiscountCode : To open discount code menu" + System.lineSeparator() +
                         "openManageRequestsMenu : To open request menu" + System.lineSeparator() +
                         "openManageCategoriesMenu : To open categories menu" + System.lineSeparator() +
                         "logout : To logout" + System.lineSeparator() +
-                        "getDiscountCodeToRandomBuyer [discountCodeId]: To get discountCode" + System.lineSeparator() +
-                        "getDiscountCodeToSpecialBuyers [discountCodeId]: To get discountCode" + System.lineSeparator() +
                         "----------------------------------------------"
         );
     }

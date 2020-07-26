@@ -433,8 +433,6 @@ public class Output {
 
     private void setProductsMenuPattern() {
         productsMenu.addRegex("viewCategories")
-                .addRegex("filtering")
-                .addRegex("sorting")
                 .addRegex("showProducts")
                 .addRegex("showProduct (\\d+)")
                 .addRegex("exit")
@@ -445,8 +443,6 @@ public class Output {
 
     private void setProductsMenuMethod() {
         productsMenu.addMethod("viewCategories")
-                .addMethod("filtering")
-                .addMethod("sorting")
                 .addMethod("showProducts")
                 .addMethod("showProduct")
                 .addMethod("exit")
