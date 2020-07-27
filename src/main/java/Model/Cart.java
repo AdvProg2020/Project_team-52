@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class Cart implements Packable<Cart> {
-    private static List<Cart> list;
+    private static List<Cart> list =new ArrayList<>();
 
     private long id;
     private List<Long> sellersId;
