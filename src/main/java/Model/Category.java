@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Category implements Packable<Category>, Cloneable{
-    private static List<Category> list;
+    private static List<Category> list =new ArrayList<>() ;
 
     private long categoryId;
     private String name;
