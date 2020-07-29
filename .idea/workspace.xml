@@ -19,9 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fcde215-e894-4da2-8bd3-232ff087df23" name="Default Changelist" comment="parimehr and kamyar">
+    <list default="true" id="2fcde215-e894-4da2-8bd3-232ff087df23" name="Default Changelist" comment=" kamyar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/AccountMenu/SellerMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/AccountMenu/SellerMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +58,7 @@
       <option name="presentableId" value="Default" />
       <updated>1589446881245</updated>
       <workItem from="1589446888050" duration="249000" />
-      <workItem from="1595798769727" duration="684000" />
+      <workItem from="1595798769727" duration="2919000" />
     </task>
     <task id="LOCAL-00001" summary="parimehr">
       <created>1589448854794</created>
@@ -159,7 +158,21 @@
       <option name="project" value="LOCAL" />
       <updated>1595619239549</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary=" kamyar">
+      <created>1595800521171</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1595800521171</updated>
+    </task>
+    <task id="LOCAL-00016" summary=" kamyar">
+      <created>1595872470499</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1595872470499</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,7 +204,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="parimehr" />
     <MESSAGE value="parimehr and kamyar" />
-    <option name="LAST_COMMIT_MESSAGE" value="parimehr and kamyar" />
+    <MESSAGE value=" kamyar" />
+    <option name="LAST_COMMIT_MESSAGE" value=" kamyar" />
   </component>
   <component name="WindowStateProjectService">
     <state x="264" y="23" key="CommitChangelistDialog2" timestamp="1593698937635">
@@ -206,11 +220,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1595620584069" />
-    <state x="288" y="122" key="Vcs.Push.Dialog.v2" timestamp="1595619248426">
+    <state x="288" y="122" key="Vcs.Push.Dialog.v2" timestamp="1595872476545">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="240" y="118" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1593215921844" />
-    <state x="288" y="122" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1595619248426" />
+    <state x="288" y="122" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1595872476545" />
     <state x="240" y="131" key="Vcs.Push.Dialog.v2/0.23.1280.730@0.23.1280.730" timestamp="1593698953282" />
     <state x="240" y="131" key="Vcs.Push.Dialog.v2/0.23.1280.732@0.23.1280.732" timestamp="1593697931633" />
     <state x="240" y="132" key="Vcs.Push.Dialog.v2/0.23.1280.738@0.23.1280.738" timestamp="1589449457171" />
