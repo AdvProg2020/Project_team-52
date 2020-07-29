@@ -97,4 +97,5 @@ public class ManageCategoryForManager extends Menu {
                         "----------------------------------------------"
         );
     }
+
 }
