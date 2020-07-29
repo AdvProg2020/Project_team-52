@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.UUID;
 
 public class DiscountCode implements Packable<DiscountCode>, Cloneable {
-    private static List<DiscountCode> list;
+    private static List<DiscountCode> list= new ArrayList<>();
 
     private static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 

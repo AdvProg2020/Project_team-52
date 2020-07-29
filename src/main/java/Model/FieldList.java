@@ -10,7 +10,7 @@ public class FieldList implements Cloneable{
 
 
 
-    private List<Field> fieldList;
+    private List<Field> fieldList= new ArrayList<>();
 
     public List<Field> getFieldList() {
         return fieldList;

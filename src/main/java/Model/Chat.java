@@ -9,8 +9,8 @@ public class Chat {
 
     private static ArrayList<Chat> allChats = new ArrayList<>();
     String id;
-    private ArrayList<Text> messages;
-    private ArrayList<Account> members;
+    private ArrayList<Text> messages= new ArrayList<>();
+    private ArrayList<Account> members = new ArrayList<>();
 
     public Chat(String id, ArrayList<Text> messages, ArrayList<Account> members) {
         this.id = id;

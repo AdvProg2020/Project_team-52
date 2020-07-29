@@ -17,7 +17,7 @@ public class Category implements Packable<Category>, Cloneable{
     private long categoryId;
     private String name;
     private FieldList categoryFields;
-    private List<Long> subCategories;
+    private List<Long> subCategories= new ArrayList<>();
     private List<Long> productList = new ArrayList<>();
 
 

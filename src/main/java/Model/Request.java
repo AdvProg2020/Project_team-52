@@ -17,7 +17,7 @@ public class Request implements Packable<Request>{
 
 
 
-    private static List<Request> list;
+    private static List<Request> list= new ArrayList<>() ;
 
     private long requestId;
     private long accountId;

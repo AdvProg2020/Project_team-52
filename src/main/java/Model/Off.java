@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class Off implements Packable<Off>, ForPend,Cloneable {
-    private static List<Off> list;
+    private static List<Off> list= new ArrayList<>();
 
     private static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
@@ -22,7 +22,7 @@ public class Off implements Packable<Off>, ForPend,Cloneable {
     private LocalDate start;
     private LocalDate end;
     private Discount discount;
-    private List<Long> productList;
+    private List<Long> productList=new ArrayList<>();
 
     public static List<Off> getList() {
         return Collections.unmodifiableList(list);

@@ -10,14 +10,14 @@ import java.util.Collections;
 import java.util.List;
 
 public class LogHistory implements Packable<LogHistory>{
-    private static List<LogHistory> list;
+    private static List<LogHistory> list= new ArrayList<>();
 
     private long logHistoryId;
     private double finalAmount;
     private double discountAmount;
     private double auctionDiscount;
     private FieldList fieldList;
-    private List<ProductLog> productLogList;
+    private List<ProductLog> productLogList= new ArrayList<>();
 
     private LogHistory() {
     }

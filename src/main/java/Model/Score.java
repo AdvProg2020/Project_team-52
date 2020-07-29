@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class Score implements Packable<Score> {
-    private static List<Score> list;
+    private static List<Score> list= new ArrayList<>();
 
     private long scoreId;
     private long userId;

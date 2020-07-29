@@ -20,8 +20,8 @@ public class Product implements Packable<Product>, Filterable, ForPend {
     private String productName;
 
     private  Off off;
-    private List<Long> scoreList;
-    private static List<Product> list;
+    private List<Long> scoreList= new ArrayList<>();
+    private static List<Product> list= new ArrayList<>();
     private List<Long> buyerList = new ArrayList<>();
 
 
@@ -40,13 +40,13 @@ public class Product implements Packable<Product>, Filterable, ForPend {
 
     private Category category;
 
-    private List<ProductSeller> sellerList;
+    private List<ProductSeller> sellerList= new ArrayList<>();
 
-    private List<Long> commentList;
+    private List<Long> commentList= new ArrayList<>();
 
     private long accountId;
     private String information;
-    private List<ProductSeller> sellersOfProduct;
+    private List<ProductSeller> sellersOfProduct= new ArrayList<>();
     private String stateForPend;
 
 
