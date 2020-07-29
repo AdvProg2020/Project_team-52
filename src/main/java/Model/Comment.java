@@ -11,7 +11,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class Comment implements Packable<Comment> {
-    private static List<Comment> list= new ArrayList<>();
+    private static List<Comment> list=new ArrayList<>();
 
     private long commentId;
     private String pendStatus;
